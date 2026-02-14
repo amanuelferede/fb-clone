@@ -15,7 +15,7 @@ export default function Feed() {
   return (
     <>
       <div className="mt-3  bg-white md:rounded-xl shadow-sm">
-        <OriginalUserPost />
+        <OriginalUserPost refFrom="post"/>
       </div>
 
       <div className="mt-3  bg-white md:rounded-xl shadow-sm">
