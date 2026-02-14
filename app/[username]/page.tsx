@@ -264,7 +264,7 @@ export default function UserProfile() {
               </div>
             </div>
             <div className="mb-4 bg-white rounded-2xl">
-              <OriginalUserPost />
+              <OriginalUserPost refFrom="post"/>
             </div>
 
             <div className="mb-4 bg-white rounded-2xl">
