@@ -4,7 +4,7 @@ import Medias from "../common/medias";
 import Header from "./header";
 import Footer from "../common/footer";
 
-export default function OriginalUserPost() {
+export default function OriginalUserPost({refFrom}:{refFrom: "comment" | "post"}) {
   return (
     <div className="w-full">
       <Header />
@@ -12,7 +12,9 @@ export default function OriginalUserPost() {
       <div className="h-screen mt-2">
         <Medias type="original" medias={medias} />
       </div>
-      <Footer />
+      {
+        refFrom === "post" && <Footer/>
+      }
     </div>
   );
 }

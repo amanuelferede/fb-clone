@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useRef, useState } from "react";
 import CommentModal from "../../commentmodal/commentmodal";
 import ReactAPost from "../reactpost/reactionbox";
+import ReactionModal from "../../reactionsmodal/reactionsmodal";
 export default function Footer() {
   const dispatch = useAppDispatch();
   const isCommentModalOpen = useAppSelector(
@@ -120,8 +121,8 @@ export default function Footer() {
         </div>
       </div>
 
-      {!isCommentModalOpen && <CommentModal />}
-      {isReactionModalOpen && <CommentModal />}
+      {isCommentModalOpen && <CommentModal />}
+      {isReactionModalOpen && <ReactionModal />}
     </>
   );
 }

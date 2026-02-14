@@ -37,7 +37,7 @@ export default function UserProfile() {
               backgroundRepeat: "no-repeat",
             }}
           >
-            <div className="absolute px-8 bg-red-400 z-10 -bottom-36 w-full flex space-x-5 my-5 pb-5 border-b-2 border-b-gray-200">
+            <div className="absolute px-8 z-10 -bottom-36 w-full flex space-x-5 my-5 pb-5 border-b-2 border-b-gray-200">
               <div className="w-42 h-42 rounded-full object-cover relative">
                 <Image
                   src={`/users/11.jpg`}

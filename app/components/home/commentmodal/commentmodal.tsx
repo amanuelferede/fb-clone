@@ -12,7 +12,7 @@ import { useAppDispatch } from "@/app/store/hooks";
 export default function CommentModal() {
   const dispatch = useAppDispatch();
 
-  const [isLoading] = useState<boolean>(true);
+  const [isLoading] = useState<boolean>(false);
   const closeModal = () => {
     dispatch(openCommentModal(false));
   };
@@ -28,7 +28,7 @@ export default function CommentModal() {
           />
         </div>
         <div className="max-h-93 overflow-y-auto custom-scrollbar m-0">
-          <OriginalUserPost />
+          <OriginalUserPost refFrom="comment" />
           {isLoading && <CommentsSkeleton />}
 
           {!isLoading && <Comments />}
