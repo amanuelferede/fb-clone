@@ -1,0 +1,127 @@
+"use client";
+import { useAppDispatch, useAppSelector } from "@/app/store/hooks";
+import { openCommentModal, openReactionModal } from "@/app/store/slices/post";
+import Image from "next/image";
+import { useRef, useState } from "react";
+import CommentModal from "../../commentmodal/commentmodal";
+import ReactAPost from "../reactpost/reactionbox";
+export default function Footer() {
+  const dispatch = useAppDispatch();
+  const isCommentModalOpen = useAppSelector(
+    (state) => state.post.isCommentModalOpen
+  );
+  const isReactionModalOpen = useAppSelector(
+    (state) => state.post.isReactionModalOpen
+  );
+  const [toShowReactionBox, settoShowReactionBox] = useState<boolean>(false);
+
+  const timoutId = useRef<NodeJS.Timeout | null>(null);
+  const showReactionEmojies = () => {
+    settoShowReactionBox(true);
+  };
+  const hideReactionEmojies = () => {
+    const _timeOutId = setTimeout(() => {
+      settoShowReactionBox(false);
+    }, 2000);
+    timoutId.current = _timeOutId;
+  };
+
+  const keepShowingReactionEmojies = () => {
+    clearTimeout(timoutId.current!);
+    settoShowReactionBox(true);
+  };
+
+  const showCommentModal = () => {
+    dispatch(openCommentModal(true));
+  };
+  const showReactionModal = () => {
+    dispatch(openReactionModal(true));
+  };
+  return (
+    <>
+      <div className="relative">
+        {toShowReactionBox && (
+          <ReactAPost
+            hideReactionEmojies={hideReactionEmojies}
+            keepShowingReactionEmojies={keepShowingReactionEmojies}
+            toShowReactionBox={toShowReactionBox}
+          />
+        )}
+        <div className="flex items-center justify-between  px-2 py-1.5">
+          <div
+            className="flex items-center space-x"
+            onClick={showReactionModal}
+          >
+            <div className="flex items-center -space-x-1.5">
+              <Image
+                alt="like"
+                src={`/reactions/like.png`}
+                width={22}
+                height={22}
+              />
+              <Image
+                alt="love"
+                src={`/reactions/love.png`}
+                width={22}
+                height={22}
+              />
+              <Image
+                alt="like"
+                src={`/reactions/care.png`}
+                width={22}
+                height={22}
+              />
+            </div>
+
+            <p className=" text-zinc-500 text-[0.99rem]">
+              Betty Alex and others
+            </p>
+          </div>
+          <p className=" text-zinc-500 text-[0.99rem]">33 comments</p>
+        </div>
+
+        <div className=" flex items-center justify-between px-2 pb-1.5">
+          <div
+            className="flex  space-x-1 grow px-1.5 py-1.5 items-center justify-center cursor-pointer rounded-sm hover:bg-zinc-50"
+            onMouseOver={showReactionEmojies}
+            onMouseLeave={hideReactionEmojies}
+          >
+            <Image
+              alt="like"
+              src={`/post footer/like.png`}
+              width={20}
+              height={20}
+            />
+            <p className="font-semibold text-zinc-500">Like</p>
+          </div>
+          <div
+            className="flex  space-x-1 grow px-1.5 py-1.5 items-center justify-center cursor-pointer rounded-sm hover:bg-zinc-50"
+            onClick={showCommentModal}
+          >
+            <Image
+              alt="comment"
+              src={`/post footer/comment.png`}
+              width={20}
+              height={20}
+              className="object-cover"
+            />
+            <p className="font-semibold text-zinc-500">Comment</p>
+          </div>
+          <div className="flex  space-x-1 grow px-1.5 py-1.5 items-center justify-center cursor-pointer rounded-sm hover:bg-zinc-50">
+            <Image
+              alt="share"
+              src={`/post footer/share.png`}
+              className="object-cover"
+              width={20}
+              height={20}
+            />
+            <p className="font-semibold text-zinc-500">Share</p>
+          </div>
+        </div>
+      </div>
+
+      {!isCommentModalOpen && <CommentModal />}
+      {isReactionModalOpen && <CommentModal />}
+    </>
+  );
+}

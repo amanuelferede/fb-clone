@@ -24,3 +24,43 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+.custom-scrollbar::-webkit-scrollbar {
+    width: 9px; /* Width of the vertical scrollbar */
+    
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color of the track */
+    border-radius: 100vh;
+    display: none;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #888; /* Color of the scrollbar thumb */
+    border-radius: 100vh;
+
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color on hover */
+   
+  }
+
+   .custom-scrollbar::-webkit-scrollbar-button {
+   display: none;
+  }
+  /* For Firefox support (basic color and width only) */
+ 
+
+
+  /**/
+.custom-scrollbar {
+   scrollbar-width: 9px;
+   
+}
+
+.custom-scrollbar-hidden {
+   scrollbar-width: none
+}
+
+.my-slider-container .slick-slide {
+  @apply max-w-30 mx-1
+}
