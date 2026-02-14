@@ -50,7 +50,7 @@ export default function Footer() {
         )}
         <div className="flex items-center justify-between  px-2 py-1.5">
           <div
-            className="flex items-center space-x"
+            className="flex items-center space-x cursor-pointer"
             onClick={showReactionModal}
           >
             <div className="flex items-center -space-x-1.5">
