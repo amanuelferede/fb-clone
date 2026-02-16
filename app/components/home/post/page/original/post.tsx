@@ -8,7 +8,7 @@ export default function OriginalPagePost() {
     <div className="w-full">
       <Header />
       <PostContent />
-      <div className="h-screen mt-2">
+      <div className="md:h-screen h-[50vh] mt-2">
         <Medias type="original" medias={medias} />
       </div>
     </div>

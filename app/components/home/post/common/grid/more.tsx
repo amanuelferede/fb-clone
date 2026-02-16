@@ -28,7 +28,7 @@ export default function GridMore({
                       ? "rounded-tl-xl"
                       : type === "original" || type === undefined
                         ? ""
-                        : "rounded-tr-2xl"
+                        : "rounded-tr-xl"
                   }`}
                   style={{
                     backgroundImage: "url(" + `${media.url}` + ")",
@@ -51,9 +51,7 @@ export default function GridMore({
                 key={media.id}
               >
                 <div
-                  className={`h-full grow ${
-                    type === "share" && index === 0 ? "rounded-tr-xl" : ""
-                  }`}
+                  className={`h-full grow`}
                   style={{
                     backgroundImage: "url(" + `${media.url}` + ")",
                     backgroundPosition: "top center",

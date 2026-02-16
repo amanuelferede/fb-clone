@@ -7,7 +7,7 @@ export default function SharedPagePost() {
   return (
     <div className="w-full p-3">
       <div className="border border-gray-300 rounded-xl pb-1.5">
-        <div className="h-128">
+        <div className="md:h-screen h-[50vh] mt-2">
           <Medias type="share" medias={medias} />
         </div>
         <Header />

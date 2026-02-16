@@ -9,32 +9,70 @@ export default function AddPost() {
     dispatch(openAddPostModal(true));
   };
   return (
-    <div className="bg-white rounded-lg shadow-md mb-2.5 p-3 flex items-center space-x-3 justify-between">
-      <Link href={`/ziamanuel`}>
-        <Image
-          src={`/users/11.jpg`}
-          alt="Amanuel Fered"
-          width={0}
-          height={0}
-          sizes="100vh"
-          className=" w-9 h-9 rounded-full object-cover"
-        />
-      </Link>
+    <>
+      <div className="bg-white rounded-lg shadow-md mb-2.5 p-3 md:flex hidden items-center space-x-3 justify-between">
+        <Link href={`/ziamanuel`}>
+          <Image
+            src={`/users/11.jpg`}
+            alt="Amanuel Fered"
+            width={0}
+            height={0}
+            sizes="100vh"
+            className=" w-9 h-9 rounded-full object-cover"
+          />
+        </Link>
 
-      <input
-        onClick={showAddPostModal}
-        className="grow bg-gray-100 py-2 px-3 cursor-pointer border-none outline-none focus:outline-none border-2 border-zinc-300 rounded-2xl placeholder:text-lg"
-        placeholder="What on your mind, Amanuel?"
-      />
-      <div className="flex space-x-1">
-        <Image
-          src={`/add post/video.png`}
-          alt="Amanuel Fered"
-          width={0}
-          height={0}
-          sizes="100vh"
-          className=" w-10 h-10 object-cover hover:bg-gray-100 p-1 rounded-md"
+        <input
+          onClick={showAddPostModal}
+          className="grow bg-gray-100 py-2 px-3 cursor-pointer border-none outline-none focus:outline-none border-2 border-zinc-300 rounded-2xl placeholder:text-lg"
+          placeholder="What on your mind, Amanuel?"
         />
+        <div className="flex space-x-1">
+          <Image
+            src={`/add post/video.png`}
+            alt="Amanuel Fered"
+            width={0}
+            height={0}
+            sizes="100vh"
+            className=" w-10 h-10 object-cover hover:bg-gray-100 p-1 rounded-md"
+          />
+          <Image
+            src={`/add post/image-gallery.png`}
+            alt="Amanuel Fered"
+            width={0}
+            height={0}
+            sizes="100vh"
+            className=" w-10 h-10 object-cover hover:bg-gray-100 p-1 rounded-md"
+          />
+          <Image
+            src={`/add post/smiling-face.png`}
+            alt="Amanuel Fered"
+            width={0}
+            height={0}
+            sizes="100vh"
+            className=" w-10 h-10 object-cover hover:bg-gray-100 p-1 rounded-md"
+          />
+        </div>
+      </div>
+
+      <div className="bg-white rounded-lg shadow-md mb-2.5 p-3 md:hidden flex items-center space-x-3 justify-between">
+        <Link href={`/ziamanuel`}>
+          <Image
+            src={`/users/11.jpg`}
+            alt="Amanuel Fered"
+            width={0}
+            height={0}
+            sizes="100vh"
+            className=" w-9 h-9 rounded-full object-cover"
+          />
+        </Link>
+
+        <input
+          onClick={showAddPostModal}
+          className="grow bg-gray-100 py-2 px-3 cursor-pointer border-none outline-none focus:outline-none border-2 border-zinc-300 rounded-2xl placeholder:text-lg"
+          placeholder="What on your mind, Amanuel?"
+        />
+
         <Image
           src={`/add post/image-gallery.png`}
           alt="Amanuel Fered"
@@ -43,15 +81,7 @@ export default function AddPost() {
           sizes="100vh"
           className=" w-10 h-10 object-cover hover:bg-gray-100 p-1 rounded-md"
         />
-        <Image
-          src={`/add post/smiling-face.png`}
-          alt="Amanuel Fered"
-          width={0}
-          height={0}
-          sizes="100vh"
-          className=" w-10 h-10 object-cover hover:bg-gray-100 p-1 rounded-md"
-        />
       </div>
-    </div>
+    </>
   );
 }

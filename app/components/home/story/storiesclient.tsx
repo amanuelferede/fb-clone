@@ -18,8 +18,6 @@ export default function StoriesClient({
   const settings = {
     dots: false,
     infinite: false,
-    slidesToShow: 5,
-    slidesToScroll: 5,
     arrows: false,
   };
 
@@ -31,7 +29,7 @@ export default function StoriesClient({
     sliderRef?.current?.slickPrev();
   };
   return (
-    <div className="relative my-slider-container">
+    <div className="relative my-slider-container w-full">
       <MdNavigateNext
         onClick={handelNext}
         className="w-12 h-12 text-gray-400 flex items-center justify-center absolute top-1/2 right-4 z-10 bg-white outline outline-gray-500 cursor-pointer rounded-full p-2  hover:fill-200  transition duration-300 ease-out "
