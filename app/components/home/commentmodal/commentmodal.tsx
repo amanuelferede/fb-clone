@@ -8,7 +8,7 @@ import CommentsSkeleton from "../skeletons/comments";
 import { openCommentModal } from "@/app/store/slices/post";
 import { useAppDispatch } from "@/app/store/hooks";
 import OriginalUserPost from "../post/user/original/post";
-import Footer from "../post/common/footer";
+import Footer from "./footer";
 
 export default function CommentModal() {
   const dispatch = useAppDispatch();
@@ -18,7 +18,7 @@ export default function CommentModal() {
     dispatch(openCommentModal(false));
   };
   return (
-    <div className="fixed z-50 top-0 left-0 right-0 bottom-0 bg-zinc-100/70">
+    <div className="fixed z-50 top-0 left-0 right-0 bottom-0 bg-gray-300/25">
       <div className="max-w-179 mx-auto mt-10 bg-white rounded-xl shadow-xl">
         <div className="sticky rounded-tl-xl rounded-tr-xl top-0 left-0 right-0 bg-white border-b border-gray-200 py-3 px-4 flex items-center justify-between">
           <p>{""}</p>

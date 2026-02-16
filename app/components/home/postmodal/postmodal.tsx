@@ -64,8 +64,8 @@ export default function PostModal() {
     }
   };
   return (
-    <div className="fixed bg-zinc-300/80 top-0 left-0 right-0 bottom-0 z-50">
-      <div className="max-w-120 bg-white mx-auto mt-24 shadow-lg rounded-xl">
+    <div className="fixed z-50 top-0 left-0 right-0 bottom-0 bg-gray-300/85">
+      <div className="max-w-120 mx-auto mt-16 bg-white rounded-xl shadow-xl">
         <div className="flex sticky top-0 left-0 right-0 items-center justify-between p-3 border-b border-b-gray-100">
           <p></p>
           <p className="text-lg font-semibold text-center">Create a post</p>

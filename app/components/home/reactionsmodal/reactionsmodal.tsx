@@ -7,7 +7,7 @@ import { CgClose } from "react-icons/cg";
 export default function ReactionModal() {
   const dispatch = useAppDispatch();
   return (
-    <div className="fixed bg-zinc-100/80 top-0 left-0 right-0 bottom-0 z-50">
+    <div className="fixed z-50 top-0 left-0 right-0 bottom-0 bg-gray-300/30">
       <div className="max-w-125 bg-white mx-auto mt-24 shadow-lg rounded-xl">
         <div className="flex sticky top-0 left-0 right-0 items-center justify-between p-3 border-b border-b-gray-100">
           <div className="flex space-x-3">
