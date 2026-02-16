@@ -2,7 +2,7 @@
 import { useAppDispatch, useAppSelector } from "@/app/store/hooks";
 import { openCommentModal, openReactionModal } from "@/app/store/slices/post";
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import CommentModal from "../../commentmodal/commentmodal";
 import ReactAPost from "../reactpost/reactionbox";
 import ReactionModal from "../../reactionsmodal/reactionsmodal";
@@ -17,27 +17,37 @@ export default function Footer() {
   const [toShowReactionBox, settoShowReactionBox] = useState<boolean>(false);
 
   const timoutId = useRef<NodeJS.Timeout | null>(null);
+  const timoutI2 = useRef<NodeJS.Timeout | null>(null);
   const showReactionEmojies = () => {
-    settoShowReactionBox(true);
+    const _timeOutId = setTimeout(() => {
+      settoShowReactionBox(true);
+    }, 1000);
+    timoutI2.current = _timeOutId;
   };
   const hideReactionEmojies = () => {
+    clearTimeout(timoutI2.current!);
+
     const _timeOutId = setTimeout(() => {
       settoShowReactionBox(false);
-    }, 2000);
+    }, 1000);
     timoutId.current = _timeOutId;
   };
 
   const keepShowingReactionEmojies = () => {
     clearTimeout(timoutId.current!);
-    settoShowReactionBox(true);
   };
 
   const showCommentModal = () => {
     dispatch(openCommentModal(true));
   };
+
   const showReactionModal = () => {
     dispatch(openReactionModal(true));
   };
+
+  useEffect(() => {
+    console.log(toShowReactionBox);
+  }, [toShowReactionBox]);
   return (
     <>
       <div className="relative">
@@ -81,10 +91,10 @@ export default function Footer() {
           <p className=" text-zinc-500 text-[0.99rem]">33 comments</p>
         </div>
 
-        <div className=" flex items-center justify-between px-2 pb-1.5">
+        <div className=" flex items-center justify-between px-2 pb-1.5 mt-2">
           <div
             className="flex  space-x-1 grow px-1.5 py-1.5 items-center justify-center cursor-pointer rounded-sm hover:bg-zinc-50"
-            onMouseOver={showReactionEmojies}
+            onMouseEnter={showReactionEmojies}
             onMouseLeave={hideReactionEmojies}
           >
             <Image

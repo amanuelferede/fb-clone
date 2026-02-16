@@ -5,9 +5,9 @@ import { BiPencil, BiPlus } from "react-icons/bi";
 import { FaCamera } from "react-icons/fa6";
 import { IoIosArrowDown, IoIosMore, IoMdArrowDropdown } from "react-icons/io";
 import { users } from "../seed/faker/user";
-import OriginalUserPost from "../components/home/post/userpost/post";
-import UserSharePost from "../components/home/post/usersharepost/post";
 import { useEffect, useState } from "react";
+import OriginalUserPost from "../components/home/post/user/original/post";
+import UserSharePost from "../components/home/post/user/share/post";
 
 export default function UserProfile() {
   const [scrollPosition, setScrollPosition] = useState<number>(0);
@@ -31,8 +31,8 @@ export default function UserProfile() {
           <div
             className="relative w-full  mx-auto mt-14 h-90 rounded-bl-xl rounded-br-xl bg-gray-100"
             style={{
-              backgroundImage: "url(" + `/users/5.jpg` + ")",
-              backgroundPosition: "top 100%",
+              backgroundImage: "url(" + `/users/29.jpg` + ")",
+              backgroundPosition: "center center",
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
             }}
@@ -176,7 +176,7 @@ export default function UserProfile() {
               <p className="text-lg">See all photos</p>
             </div>
 
-            <div className="px-4 py-3.5  mb-5 bg-white rounded-xl shadow-sm">
+            <div className="px-4 py-3.5  mb-5 bg-white rounded-xl shadow-sm sticky top-20">
               <div className="flex justify-between">
                 <p className="text-xl font-bold">Photos</p>
                 <p className="text-xl">See all photos</p>
@@ -190,7 +190,7 @@ export default function UserProfile() {
                   (el, index) => {
                     return (
                       <div
-                        className="w-full h-25 flex flex-col space-y-1.5"
+                        className="w-full flex flex-col space-y-1.5"
                         key={index}
                       >
                         <Image
@@ -264,7 +264,7 @@ export default function UserProfile() {
               </div>
             </div>
             <div className="mb-4 bg-white rounded-2xl">
-              <OriginalUserPost refFrom="post"/>
+              <OriginalUserPost />
             </div>
 
             <div className="mb-4 bg-white rounded-2xl">

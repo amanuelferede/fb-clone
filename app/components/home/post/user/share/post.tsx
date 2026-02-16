@@ -1,6 +1,5 @@
-import PostContent from "../common/content";
-import Footer from "../common/footer";
-import SharedUserPost from "../shared/userpost";
+import PostContent from "../../common/content";
+import SharedUserPost from "../../shared/userpost";
 import Header from "./header";
 
 export default function UserSharePost() {
@@ -9,7 +8,6 @@ export default function UserSharePost() {
       <Header />
       <PostContent />
       <SharedUserPost />
-      <Footer />
     </div>
   );
 }

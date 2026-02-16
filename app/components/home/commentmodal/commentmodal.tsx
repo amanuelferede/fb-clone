@@ -1,6 +1,5 @@
 "use client";
 import { CgClose } from "react-icons/cg";
-import OriginalUserPost from "../post/userpost/post";
 import Image from "next/image";
 
 import Comments from "./comments";
@@ -8,6 +7,7 @@ import { useState } from "react";
 import CommentsSkeleton from "../skeletons/comments";
 import { openCommentModal } from "@/app/store/slices/post";
 import { useAppDispatch } from "@/app/store/hooks";
+import OriginalUserPost from "../post/user/original/post";
 
 export default function CommentModal() {
   const dispatch = useAppDispatch();
@@ -28,7 +28,7 @@ export default function CommentModal() {
           />
         </div>
         <div className="max-h-93 overflow-y-auto custom-scrollbar m-0">
-          <OriginalUserPost refFrom="comment" />
+          <OriginalUserPost />
           {isLoading && <CommentsSkeleton />}
 
           {!isLoading && <Comments />}

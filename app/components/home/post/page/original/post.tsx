@@ -1,10 +1,9 @@
 import { medias } from "@/app/seed/faker/medias";
-import PostContent from "../common/content";
-import Medias from "../common/medias";
 import Header from "./header";
-import Footer from "../common/footer";
+import PostContent from "../../common/content";
+import Medias from "../../common/medias";
 
-export default function OriginalUserPost({refFrom}:{refFrom: "comment" | "post"}) {
+export default function OriginalPagePost() {
   return (
     <div className="w-full">
       <Header />
@@ -12,9 +11,6 @@ export default function OriginalUserPost({refFrom}:{refFrom: "comment" | "post"}
       <div className="h-screen mt-2">
         <Medias type="original" medias={medias} />
       </div>
-      {
-        refFrom === "post" && <Footer/>
-      }
     </div>
   );
 }
