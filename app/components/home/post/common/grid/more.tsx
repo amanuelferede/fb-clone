@@ -26,7 +26,7 @@ export default function GridMore({
                   className={`h-full grow ${
                     type === "share" && index === 0
                       ? "rounded-tl-xl"
-                      : type === "original"
+                      : type === "original" || type === undefined
                         ? ""
                         : "rounded-tr-2xl"
                   }`}

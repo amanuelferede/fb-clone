@@ -1,11 +1,11 @@
 import Image from "next/image";
 import { FiMoreHorizontal } from "react-icons/fi";
-import Footer from "../components/home/photo/footer";
 import Comments from "../components/home/photo/comments";
 import { CgClose } from "react-icons/cg";
 import { BsZoomIn, BsZoomOut } from "react-icons/bs";
 import { BiFullscreen, BiTag } from "react-icons/bi";
 import Link from "next/link";
+import Footer from "../components/home/photo/footer";
 export default function Photo() {
   return (
     <>
@@ -74,48 +74,7 @@ export default function Photo() {
                 <FiMoreHorizontal className="w-4.5 h-4.5" />
               </div>
             </div>
-            <div className="my-2 flex justify-between px-2.5">
-              <div className="flex space-x-1">
-                <div className="flex -space-x-1">
-                  <Image
-                    alt="Facebook"
-                    src={"/reactions/like.png"}
-                    width={0}
-                    height={0}
-                    sizes="100vh"
-                    className="w-5 h-5 "
-                  />
-                  <Image
-                    alt="Facebook"
-                    src={"/reactions/love.png"}
-                    width={0}
-                    height={0}
-                    sizes="100vh"
-                    className="w-5 h-5 "
-                  />
-                  <Image
-                    alt="Facebook"
-                    src={"/reactions/care.png"}
-                    width={0}
-                    height={0}
-                    sizes="100vh"
-                    className="w-5 h-5 "
-                  />
-                </div>
-                <p className="text-[0.93rem]">22</p>
-              </div>
-              <div className="flex space-x-1">
-                <p className="text-[0.93rem]">9</p>
-                <Image
-                  alt="Facebook"
-                  src={"/post footer/comment.png"}
-                  width={0}
-                  height={0}
-                  sizes="100vh"
-                  className="w-4 h-4 "
-                />
-              </div>
-            </div>
+
             <Footer />
             <Comments />
           </div>

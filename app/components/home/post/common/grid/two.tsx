@@ -23,7 +23,11 @@ export default function GridTwo({
             <Link className="w-1/2 h-full" href={`/photo`} key={media.id}>
               <div
                 className={`w-full h-full ${
-                  type === "share" ? "rounded-tl-xl" : "rounded-tr-xl"
+                  type === "share"
+                    ? "rounded-tl-xl"
+                    : type === undefined
+                      ? ""
+                      : "rounded-tr-xl"
                 }`}
                 style={{
                   backgroundPosition: "top center",
@@ -46,7 +50,11 @@ export default function GridTwo({
           <Link className="h-1/2 w-full" href={`/photo`} key={media.id}>
             <div
               className={`h-full w-full ${
-                type === "share" ? "rounded-tl-xl" : "rounded-tr-xl"
+                type === "share"
+                  ? "rounded-tl-xl"
+                  : type === undefined
+                    ? ""
+                    : "rounded-tr-xl"
               }`}
               style={{
                 backgroundPosition: "top center",

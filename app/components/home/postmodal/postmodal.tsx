@@ -104,8 +104,8 @@ export default function PostModal() {
           </div>
 
           <div
-            className={`max-h-42 overflow-y-auto x  ${
-              showScrollBar ? "custom-scrollbar" : "custom-scrollbar-hidden"
+            className={`max-h-73 overflow-y-auto x  ${
+              showScrollBar ? "" : ""
             } `}
             onMouseOver={() => setShowScrollBar(true)}
             onMouseLeave={() => setShowScrollBar(false)}
@@ -178,7 +178,7 @@ export default function PostModal() {
                 width={0}
                 height={0}
                 sizes="100vh"
-                className="w-9 h-9 p-1 hover:bg-gray-100 rounded-full cursor-pointer"
+                className="w-9 h-9 p-1 hover:bg-gray-100 cursor-pointer"
               />
               <Image
                 src={`/add post/friend.png`}
@@ -186,7 +186,7 @@ export default function PostModal() {
                 width={0}
                 height={0}
                 sizes="100vh"
-                className="w-9 h-9 p-1 hover:bg-gray-100 rounded-full"
+                className="w-9 h-9 p-1 hover:bg-gray-100 "
               />
               <Image
                 src={`/add post/smiling-face.png`}
@@ -194,7 +194,7 @@ export default function PostModal() {
                 width={0}
                 height={0}
                 sizes="100vh"
-                className="w-9 h-9 p-1 hover:bg-gray-100 rounded-full"
+                className="w-9 h-9 p-1 hover:bg-gray-100 "
               />
 
               <Image
@@ -203,7 +203,7 @@ export default function PostModal() {
                 width={0}
                 height={0}
                 sizes="100vh"
-                className="w-9 h-9 p-1 hover:bg-gray-100 rounded-full"
+                className="w-9 h-9 p-1 hover:bg-gray-100 "
               />
               <Image
                 src={`/add post/gif.png`}
@@ -211,7 +211,7 @@ export default function PostModal() {
                 width={0}
                 height={0}
                 sizes="100vh"
-                className="w-9 h-9 p-1 hover:bg-gray-100 rounded-full"
+                className="w-9 h-9 p-1 hover:bg-gray-100 "
               />
             </div>
           </div>

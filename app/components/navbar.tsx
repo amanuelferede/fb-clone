@@ -158,7 +158,7 @@ export default function TopBar() {
                   >
                     <Image
                       alt="Facebook"
-                      src={`/addpost/friends.png`}
+                      src={`/add post/group.png`}
                       width={0}
                       height={0}
                       sizes="100vh"
