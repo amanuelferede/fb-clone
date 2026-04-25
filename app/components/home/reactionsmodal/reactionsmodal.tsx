@@ -8,7 +8,7 @@ export default function ReactionModal() {
   const dispatch = useAppDispatch();
   return (
     <div className="fixed z-50 top-0 left-0 right-0 bottom-0 bg-gray-300/30">
-      <div className="max-w-125 bg-white mx-auto mt-24 shadow-lg rounded-xl">
+      <div className="max-w-125  bg-white mx-auto mt-24 shadow-lg rounded-xl">
         <div className="flex sticky top-0 left-0 right-0 items-center justify-between p-3 border-b border-b-gray-100">
           <div className="flex space-x-3">
             <p>All</p>
@@ -53,8 +53,8 @@ export default function ReactionModal() {
             }}
           />
         </div>
-        <div className="flex flex-col space-y-4 p-3">
-          {Array.from({ length: 7 }, (el, index) => {
+        <div className="flex flex-col space-y-4 p-3 max-h-105 overflow-y-auto">
+          {Array.from({ length: 30 }, (el, index) => {
             return (
               <div key={index} className="flex items-center justify-between">
                 <div className="flex space-x-3">

@@ -13,7 +13,7 @@ import Footer from "./footer";
 export default function CommentModal() {
   const dispatch = useAppDispatch();
 
-  const [isLoading] = useState<boolean>(false);
+  const [isLoading] = useState<boolean>(true);
   const closeModal = () => {
     dispatch(openCommentModal(false));
   };

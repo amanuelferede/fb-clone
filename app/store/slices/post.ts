@@ -17,13 +17,10 @@ export const postSlice = createSlice({
     openCommentModal: (state, action: PayloadAction<boolean>) => {
       state.isCommentModalOpen = action.payload;
     },
-
-openReactionModal: (state, action: PayloadAction<boolean>) => {
+    
+    openReactionModal: (state, action: PayloadAction<boolean>) => {
       state.isReactionModalOpen = action.payload;
     },
-
-    
-    
   },
 });
 
