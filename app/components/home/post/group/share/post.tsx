@@ -1,13 +1,14 @@
-import PostContent from "../../common/content";
-import SharedUserPost from "../../shared/userpost";
+import PostCard from "@/app/components/generic/post/card";
+import Footer from "../../common/footer";
 import Header from "./header";
+import Body from "./body";
 
 export default function ToGroupSharePost() {
   return (
-    <div className="w-full">
+    <PostCard>
       <Header />
-      <PostContent />
-      <SharedUserPost />
-    </div>
+      <Body />
+      <Footer />
+    </PostCard>
   );
 }

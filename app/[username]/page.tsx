@@ -6,8 +6,8 @@ import { FaCamera } from "react-icons/fa6";
 import { IoIosArrowDown, IoIosMore, IoMdArrowDropdown } from "react-icons/io";
 import { users } from "../seed/faker/user";
 import { useEffect, useState } from "react";
-import OriginalUserPost from "../components/home/post/user/original/post";
-import UserSharePost from "../components/home/post/user/share/post";
+import OriginalUserPost from "../components/home/post/user/original/body";
+import UserSharePost from "../components/home/post/user/share/body";
 
 export default function UserProfile() {
   const [scrollPosition, setScrollPosition] = useState<number>(0);

@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import CommentModal from "../../commentmodal/commentmodal";
 import ReactAPost from "../reactpost/reactionbox";
 import ReactionModal from "../../reactionsmodal/reactionsmodal";
+import Container from "@/app/components/generic/container";
 export default function Footer() {
   const dispatch = useAppDispatch();
   const isCommentModalOpen = useAppSelector(
@@ -50,7 +51,7 @@ export default function Footer() {
   }, [toShowReactionBox]);
   return (
     <>
-      <div className="relative">
+      <Container className="relative">
         {toShowReactionBox && (
           <ReactAPost
             hideReactionEmojies={hideReactionEmojies}
@@ -129,7 +130,7 @@ export default function Footer() {
             <p className="font-semibold text-zinc-500">Share</p>
           </div>
         </div>
-      </div>
+      </Container>
 
       {isCommentModalOpen && <CommentModal />}
       {isReactionModalOpen && <ReactionModal />}

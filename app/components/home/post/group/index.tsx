@@ -1,11 +1,11 @@
-import OriginalGroupPostCard from "./original/card";
-import ToGroupSharePostCard from "./share/card";
+import OriginalGroupPost from "./original/post";
+import ToGroupSharePost from "./share/post";
 
 export default function GroupPost() {
   return (
     <div className="">
-      <OriginalGroupPostCard />
-      <ToGroupSharePostCard />
+      <OriginalGroupPost />
+      <ToGroupSharePost />
     </div>
   );
 }

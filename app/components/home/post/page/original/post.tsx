@@ -1,16 +1,14 @@
-import { medias } from "@/app/seed/faker/medias";
+import PostCard from "@/app/components/generic/post/card";
+import Footer from "../../common/footer";
 import Header from "./header";
-import PostContent from "../../common/content";
-import Medias from "../../common/medias";
+import Body from "./body";
 
 export default function OriginalPagePost() {
   return (
-    <div className="w-full">
+    <PostCard>
       <Header />
-      <PostContent />
-      <div className="md:h-screen h-[50vh] mt-2">
-        <Medias type="original" medias={medias} />
-      </div>
-    </div>
+      <Body />
+      <Footer />
+    </PostCard>
   );
 }

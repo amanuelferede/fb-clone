@@ -1,13 +1,14 @@
-import PostContent from "../../common/content";
-import SharedUserPost from "../../shared/userpost";
+import PostCard from "@/app/components/generic/post/card";
+import Footer from "../../common/footer";
+import Body from "./body";
 import Header from "./header";
 
 export default function PageSharePost() {
   return (
-    <div className="w-full">
+    <PostCard>
       <Header />
-      <PostContent />
-      <SharedUserPost />
-    </div>
+      <Body />
+      <Footer />
+    </PostCard>
   );
 }

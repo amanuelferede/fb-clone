@@ -1,11 +1,12 @@
-import OriginalPagePostCard from "./original/card";
-import PageSharePostCard from "./share/card";
+import Container from "@/app/components/generic/container";
+import PageSharePost from "./share/post";
+import OriginalPagePost from "./original/post";
 
 export default function PagePost() {
   return (
-    <div className="">
-      <OriginalPagePostCard />
-      <PageSharePostCard />
-    </div>
+    <Container>
+      <OriginalPagePost />
+      <PageSharePost />
+    </Container>
   );
 }
