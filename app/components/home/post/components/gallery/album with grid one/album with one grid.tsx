@@ -4,7 +4,7 @@ import Container from "../components/container";
 import { galleryContext } from "../context/gallery context";
 import Item1 from "./components/item1";
 export default function AlbumWithGridOne() {
-  const { medias, postType } = useContext(galleryContext);
+  const { medias } = useContext(galleryContext);
 
   return (
     <Container>
