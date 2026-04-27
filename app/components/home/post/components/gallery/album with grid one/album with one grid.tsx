@@ -1,27 +1,14 @@
+"use client";
+import { useContext } from "react";
 import Container from "../components/container";
-import Item1 from "./album1/components/item1";
-import Image from "next/image";
-export default function AlbumWithGridOne({
-  medias,
-}: {
-  medias: {
-    type: string;
-    id: number;
-    url: string;
-  }[];
-}) {
+import { galleryContext } from "../context/gallery context";
+import Item1 from "./components/item1";
+export default function AlbumWithGridOne() {
+  const { medias, postType } = useContext(galleryContext);
+
   return (
     <Container>
-      <Item1>
-        <Image
-          src={`/users/4.jpg`}
-          alt="Amanuel Fered"
-          width={0}
-          height={0}
-          sizes="100vh"
-          className="w-full h-full object-cover"
-        />
-      </Item1>
+      <Item1 url={medias[0].url}></Item1>
     </Container>
   );
 }

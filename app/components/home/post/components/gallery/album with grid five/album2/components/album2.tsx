@@ -1,66 +1,26 @@
+"use client";
 import GridCol from "./gridcol";
 import GridRow from "./gridrow";
-import Image from "next/image";
 import RowSpan7 from "./rowspan7";
 import RowSpan5 from "./rowspan5";
 import Item1 from "./item1";
+import { useContext } from "react";
+import { galleryContext } from "../../../context/gallery context";
+import Item2 from "./item2";
+
 export default function Album2() {
+  const { medias, postType } = useContext(galleryContext);
+
   return (
     <GridRow>
       <RowSpan7>
-        <Item1>
-          <Image
-            src={`/users/12.jpg`}
-            alt="Amanuel Fered"
-            width={0}
-            height={0}
-            sizes="100vh"
-            className="w-full h-full object-cover"
-          />
-        </Item1>
+        <Item1 url={medias[0].url} postType={postType} />
       </RowSpan7>
       <RowSpan5>
         <GridCol>
-          <Item1>
-            <Image
-              src={`/users/35.jpg`}
-              alt="Amanuel Fered"
-              width={0}
-              height={0}
-              sizes="100vh"
-              className="w-full h-full object-cover"
-            />
-          </Item1>
-          <Item1>
-            <Image
-              src={`/users/15.jpg`}
-              alt="Amanuel Fered"
-              width={0}
-              height={0}
-              sizes="100vh"
-              className="w-full h-full object-cover"
-            />
-          </Item1>
-          <Item1>
-            <Image
-              src={`/users/5.jpg`}
-              alt="Amanuel Fered"
-              width={0}
-              height={0}
-              sizes="100vh"
-              className="w-full h-full object-cover"
-            />
-          </Item1>
-          <Item1>
-            <Image
-              src={`/users/25.jpg`}
-              alt="Amanuel Fered"
-              width={0}
-              height={0}
-              sizes="100vh"
-              className="w-full h-full object-cover"
-            />
-          </Item1>
+          {medias.slice(1).map((media) => (
+            <Item2 url={media.url} key={media.id} />
+          ))}
         </GridCol>
       </RowSpan5>
     </GridRow>

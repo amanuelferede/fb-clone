@@ -29,7 +29,7 @@ export default function OriginalUserPost() {
           content={`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis dolor ullam, adipisci facere velit consectetur repellat fugit, saepe rem deleniti in accusamus, nam accusantium possimus debitis. Repudiandae dolorem maiores et?`}
         />
       </Body>
-      <Gallery medias={medias} />
+      <Gallery medias={medias} postType="original" />
       <Footer />
     </PostCard>
   );

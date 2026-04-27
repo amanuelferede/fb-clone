@@ -1,8 +1,11 @@
-import { Media } from "../../../types/media";
+"use client";
+import { useContext } from "react";
 import GridRow from "./gridrow";
 import Item1 from "./item1";
+import { galleryContext } from "../../../context/gallery context";
 
-export default function Album2({ medias }: { medias: Media[] }) {
+export default function Album2() {
+  const { medias } = useContext(galleryContext);
   return (
     <GridRow>
       {medias.map((media) => (

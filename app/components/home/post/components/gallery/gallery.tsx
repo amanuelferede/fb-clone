@@ -4,31 +4,24 @@ import AlbumWithGridMore from "./album with grid more/album with grid more";
 import AlbumWithGridOne from "./album with grid one/album with one grid";
 import AlbumWithGridThree from "./album with grid three/album with three grids";
 import AlbumWithGridTwo from "./album with grid two/album with two grids";
-import { Media } from "./types/media";
+import GalleryContextProvider from "./context/gallery provider";
+import { Media, PostType } from "./types/media";
 
 export default function Gallery({
   medias,
-  type,
+  postType,
 }: {
-  type?: "original" | "share";
+  postType: PostType;
   medias: Media[];
 }) {
-  if (medias && medias.length === 1) {
-    return <AlbumWithGridOne medias={medias} />;
-  }
-  if (medias && medias.length === 2) {
-    return <AlbumWithGridTwo medias={medias} />;
-  }
-  if (medias && medias.length === 3) {
-    return <AlbumWithGridThree medias={medias} />;
-  }
-  if (medias && medias.length === 4) {
-    return <AlbumWithGridFour medias={medias} />;
-  }
-  if (medias && medias.length === 5) {
-    return <AlbumWithGridFive medias={medias} />;
-  }
-  if (medias && medias.length > 5) {
-    return <AlbumWithGridMore medias={medias} />;
-  }
+  return (
+    <GalleryContextProvider postType={postType} medias={medias}>
+      {medias && medias.length === 1 && <AlbumWithGridOne />}
+      {medias && medias.length === 2 && <AlbumWithGridTwo />}
+      {medias && medias.length === 3 && <AlbumWithGridThree />}
+      {medias && medias.length === 4 && <AlbumWithGridFour />}
+      {medias && medias.length === 5 && <AlbumWithGridFive />}
+      {medias && medias.length > 5 && <AlbumWithGridMore />}
+    </GalleryContextProvider>
+  );
 }

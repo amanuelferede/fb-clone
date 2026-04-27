@@ -3,3 +3,5 @@ export type Media = {
   id: number;
   url: string;
 };
+
+export type PostType = "original" | "share";

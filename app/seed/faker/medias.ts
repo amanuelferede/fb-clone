@@ -14,10 +14,5 @@ export const medias = [
     url: "/users/19.jpg",
     id: 2,
   },
-  {
-    type: "image",
-    url: "/users/29.jpg",
-    id: 3,
-  },
   
 ];
