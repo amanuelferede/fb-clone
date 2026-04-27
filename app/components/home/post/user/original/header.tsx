@@ -1,6 +1,6 @@
-import ProfilePic from "./components/profilepic";
-import PostDate from "./components/postdate";
-import UserName from "./components/username";
+import ProfilePic from "./components/header/profilepic";
+import PostDate from "./components/header/postdate";
+import UserName from "./components/header/username";
 import FlexCol from "../../components/flexcol";
 import FlexRow from "../../components/flexrow";
 
