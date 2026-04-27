@@ -2,7 +2,7 @@ import { CgClose } from "react-icons/cg";
 import Text from "./components/header/text";
 import { openAddPostModal } from "@/app/store/slices/addpost";
 import { useAppDispatch } from "@/app/store/hooks";
-import Container from "../../generic/container";
+import Container from "./components/header/container";
 export default function ModalHeader() {
   const dispatch = useAppDispatch();
   const openModal = () => {
@@ -10,7 +10,7 @@ export default function ModalHeader() {
   };
 
   return (
-    <Container className="flex space-x-2.5">
+    <Container>
       <Text>{""}</Text>
       <Text>Create a post</Text>
       <CgClose

@@ -8,7 +8,10 @@ import UploadedMedias from "../../uploadedmedias/uploadedmedias";
 import { useAppDispatch, useAppSelector } from "@/app/store/hooks";
 import { setPostConent } from "@/app/store/slices/addpost";
 import { ChangeEvent } from "react";
-import Container from "@/app/components/generic/container";
+import FlexRow1 from "./components/flexrow container1";
+import FlexRow2 from "./components/flexrow container2";
+import FlexCol from "./components/flexcol";
+import Container from "./components/container";
 export default function Body() {
   const dispatch = useAppDispatch();
 
@@ -19,12 +22,12 @@ export default function Body() {
     dispatch(setPostConent(e.target.value));
   };
   return (
-    <Container>
-      <Container className="flex space-x-2 mb-2">
+    <>
+      <FlexRow1>
         <CurrentUserProfilePic />
-        <Container className="flex flex-col">
+        <FlexCol>
           <CurrentUserName />
-          <Container className="flex space-x-0.5 bg-gray-200 p-1 items-center justify-center rounded-md">
+          <FlexRow2>
             <Image
               src={`/add post/group.png`}
               alt="User"
@@ -34,10 +37,10 @@ export default function Body() {
               className="w-4 h-4"
             />
             <p className="text-sm">Freinds</p>
-          </Container>
-        </Container>
-      </Container>
-      <Container className={`max-h-73 overflow-y-auto relative`}>
+          </FlexRow2>
+        </FlexCol>
+      </FlexRow1>
+      <Container>
         <TextBox
           onChangePostContent={onChangePostContent}
           postContent={postContent}
@@ -52,6 +55,6 @@ export default function Body() {
         uploadedMediaLength={uploadedMedias.at.length}
       />
       <Footer />
-    </Container>
+    </>
   );
 }
