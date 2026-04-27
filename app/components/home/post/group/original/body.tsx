@@ -1,7 +1,6 @@
-import Text from "@/app/components/generic/post/text";
-import Container from "@/app/components/generic/container";
 import Medias from "../../common/medias";
 import { medias } from "@/app/seed/faker/medias";
+import Text from "../../components/text";
 export default function Body() {
   return (
     <>
@@ -14,9 +13,9 @@ export default function Body() {
         immediate risk. #France #Migrants #UK #MigrantBoat#Refugees
         #NorthernFrance #News #BBCNews
       </Text>
-      <Container className="md:h-screen h-[50vh] mt-2">
+      <div className="md:h-screen h-[50vh] mt-2">
         <Medias type="original" medias={medias} />
-      </Container>
+      </div>
     </>
   );
 }

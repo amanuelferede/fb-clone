@@ -1,7 +1,7 @@
-import PostCard from "@/app/components/generic/post/card";
 import Footer from "../../common/footer";
+import PostCard from "../../components/postcard";
+import Header from "../components/header";
 import Body from "./body";
-import Header from "./header";
 
 export default function PageSharePost() {
   return (

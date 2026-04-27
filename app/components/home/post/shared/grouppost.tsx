@@ -1,7 +1,7 @@
 import { medias } from "@/app/seed/faker/medias";
 import PostContent from "../common/content";
 import Medias from "../common/medias";
-import Header from "../page/original/header";
+import Header from "../group/components/header";
 
 export default function SharedPagePost() {
   return (

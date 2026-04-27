@@ -1,7 +1,7 @@
-import PostCard from "@/app/components/generic/post/card";
 import Footer from "../../common/footer";
-import Header from "./header";
 import Body from "./body";
+import PostCard from "../../components/postcard";
+import Header from "../components/header";
 
 export default function ToGroupSharePost() {
   return (

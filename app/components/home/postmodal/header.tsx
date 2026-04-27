@@ -1,29 +1,22 @@
-import Image from "next/image";
-export default function Header() {
+import { CgClose } from "react-icons/cg";
+import Text from "./components/header/text";
+import { openAddPostModal } from "@/app/store/slices/addpost";
+import { useAppDispatch } from "@/app/store/hooks";
+import Container from "../../generic/container";
+export default function ModalHeader() {
+  const dispatch = useAppDispatch();
+  const openModal = () => {
+    dispatch(openAddPostModal(false));
+  };
+
   return (
-    <div className="flex space-x-2 mb-2">
-      <Image
-        src={`/users/11.jpg`}
-        alt="User"
-        width={0}
-        height={0}
-        sizes="100vh"
-        className="w-10 h-10 rounded-full"
+    <Container className="flex space-x-2.5">
+      <Text>{""}</Text>
+      <Text>Create a post</Text>
+      <CgClose
+        className="w-8 rounded-full h-8 p-1 text-zinc-600 cursor-pointer bg-gray-200 hover:bg-gray-300"
+        onClick={openModal}
       />
-      <div className="flex flex-col">
-        <p className="font-semibold text-sm">Amanuel Ferede</p>
-        <button className="flex space-x-0.5 bg-gray-200 p-1 items-center justify-center rounded-md">
-          <Image
-            src={`/add post/group.png`}
-            alt="User"
-            width={0}
-            height={0}
-            sizes="100vh"
-            className="w-4 h-4"
-          />
-          <p className="text-sm">Freinds</p>
-        </button>
-      </div>
-    </div>
+    </Container>
   );
 }

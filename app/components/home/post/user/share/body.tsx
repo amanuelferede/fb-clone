@@ -1,6 +1,5 @@
-import Text from "@/app/components/generic/post/text";
 import SharedPagePost from "../../shared/grouppost";
-
+import Text from "../../components/text";
 export default function Body() {
   return (
     <>

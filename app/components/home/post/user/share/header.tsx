@@ -1,8 +1,8 @@
-import ProfilePic from "./header/profilepic";
-import FlexCol from "@/app/components/generic/post/flex-col";
-import UserName from "../common/username";
-import PostDate from "./header/date";
-import FlexRow from "@/app/components/generic/post/flex-row";
+import FlexRow from "../../components/flexrow";
+import FlexCol from "../../components/flexcol";
+import ProfilePic from "./components/profilepic";
+import UserName from "./components/username";
+import PostDate from "./components/postdate";
 export default function Header() {
   return (
     <FlexRow>

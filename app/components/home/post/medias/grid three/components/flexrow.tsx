@@ -1,3 +1,3 @@
 export default function FlexRow({ children }: { children: React.ReactNode }) {
-  return <div className={`flex px-3 pt-3 pb-1.5 space-x-3`}>{children}</div>;
+  <div className="flex space-x-1 w-full h-full">{children}</div>;
 }
