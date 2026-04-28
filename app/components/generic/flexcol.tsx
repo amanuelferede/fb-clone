@@ -3,7 +3,7 @@ export default function FlexCol({
   spaceY,
 }: {
   children: React.ReactNode;
-  spaceY: string;
+  spaceY?: string;
 }) {
-  return <div className={`flex flex-col ${spaceY}`}>{children}</div>;
+  return <div className={` flex flex-col ${spaceY}`}>{children}</div>;
 }

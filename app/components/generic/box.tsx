@@ -7,6 +7,15 @@ export default function Box({
   padding,
   paddingX,
   paddingY,
+  paddingBottom,
+  paddingLeft,
+  paddingRight,
+  paddingTop,
+
+  marginBottom,
+  marginLeft,
+  marginRight,
+  marginTop,
   margin,
   marginX,
   marginY,
@@ -25,6 +34,8 @@ export default function Box({
   overFlowY,
   position,
   bottom,
+  borderWidth,
+  borderColor,
   left,
   right,
   top,
@@ -36,6 +47,16 @@ export default function Box({
   maxWidth?: string;
   padding?: string;
   paddingX?: string;
+  paddingTop?: string;
+  paddingBottom?: string;
+  paddingLeft?: string;
+  paddingRight?: string;
+
+  marginTop?: string;
+  marginBottom?: string;
+  marginLeft?: string;
+  marginRight?: string;
+
   paddingY?: string;
   margin?: string;
   marginX?: string;
@@ -60,6 +81,8 @@ export default function Box({
   bottom?: string;
   children?: React.ReactNode;
   zIndex?: string;
+  borderWidth?: string;
+  borderColor?: string;
 }) {
   return (
     <div
@@ -76,7 +99,15 @@ export default function Box({
         ${maxHeight}
         ${padding} 
         ${paddingX} 
-        ${paddingY} 
+        ${paddingY}
+        ${marginBottom}
+        ${marginTop}
+        ${marginLeft}
+        ${marginRight}
+        ${paddingBottom}
+        ${paddingTop}
+        ${paddingLeft}
+        ${paddingRight}
         ${margin} 
         ${marginX} 
         ${marginY} 
@@ -98,6 +129,8 @@ export default function Box({
         ${right}
         ${bottom}
         ${zIndex}
+        ${borderWidth}
+        ${borderColor}
         `}
     >
       {children}

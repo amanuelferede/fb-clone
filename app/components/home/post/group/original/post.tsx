@@ -1,35 +1,71 @@
-import { medias } from "@/app/seed/faker/medias";
 import Footer from "../../common/footer";
+import Image from "next/image";
 import Gallery from "../../components/gallery/gallery";
-import PostCard from "../../components/postcard";
-import Body from "./components/body";
-import Header from "./components/header";
-import FlexCol from "./components/header/flexcol";
-import PostDate from "./components/header/postdate";
-import UserName from "./components/header/username";
-import PostContent from "./components/postcontent";
-import Container from "../components/container";
-import UserGroupProfile from "../components/profile";
-
+import { medias } from "@/app/seed/faker/medias";
+import Box from "@/app/components/generic/box";
+import FlexRow from "@/app/components/generic/flexrow";
+import FlexCol from "@/app/components/generic/flexcol";
+import Text from "@/app/components/generic/text";
+import Link from "next/link";
 export default function OriginalGroupPost() {
   return (
-    <PostCard>
-      <Header>
-        <Container>
-          <UserGroupProfile />
-        </Container>
-        <FlexCol>
-          <UserName />
-          <PostDate />
-        </FlexCol>
-      </Header>
-      <Body>
-        <PostContent
-          content={`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis dolor ullam, adipisci facere velit consectetur repellat fugit, saepe rem deleniti in accusamus, nam accusantium possimus debitis. Repudiandae dolorem maiores et?`}
-        />
-      </Body>
+    <Box
+      width="w-full"
+      shadow="shadow-sm"
+      rounded="rounded-xl"
+      marginTop="mt-3"
+      backgroundColor="bg-white"
+    >
+      <Box paddingX="px-3" paddingTop="pt-3" paddingBottom="2">
+        <FlexRow spaceX="space-x-3">
+          <Box
+            width="w-12"
+            height="h-12"
+            position="relative"
+            rounded="rounded-lg"
+          >
+            <Link href={`/ziamanuel`}>
+              <Image
+                src={`/users/19.jpg`}
+                alt="Amanuel Fered"
+                width={0}
+                height={0}
+                sizes="100vh"
+                className="w-full h-full brightness-80 rounded-lg object-cover"
+              />
+            </Link>
+
+            <Link href={`/ziamanuel`}>
+              <Image
+                src={`/users/14.jpg`}
+                alt="Amanuel Fered"
+                width={0}
+                height={0}
+                sizes="100vh"
+                className="absolute -right-1 -bottom-1 w-7 h-7 rounded-full object-cover border border-white"
+              />
+            </Link>
+          </Box>
+          <FlexCol>
+            <Text fontSize="text-[1rem]" fontWeight="font-semibold">
+              Amanuel Ferede
+            </Text>
+            <Text color="text-zinc-500" fontWeight="font-semibold">
+              December 16 at 9:40 PM
+            </Text>
+          </FlexCol>
+        </FlexRow>
+      </Box>
+      <Box width="w-full" padding="p-2">
+        <Text>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error
+          consequatur, necessitatibus repudiandae nihil sequi eveniet numquam
+          suscipit dicta ea impedit veniam officia, soluta similique repellat
+          vero voluptatem delectus? Minus, iusto.
+        </Text>
+      </Box>
       <Gallery medias={medias} postType="original" />
       <Footer />
-    </PostCard>
+    </Box>
   );
 }
