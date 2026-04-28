@@ -4,4 +4,4 @@ export type Media = {
   url: string;
 };
 
-export type PostType = "original" | "share";
+export type PostType = "original" | "share" | "uploaded";
