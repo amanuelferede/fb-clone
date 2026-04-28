@@ -1,14 +1,19 @@
 "use client";
 import { useContext } from "react";
-import Container from "../components/container";
 import { galleryContext } from "../context/gallery context";
-import Item1 from "./components/item1";
+import Box from "@/app/components/generic/box";
 export default function AlbumWithGridOne() {
-  const { medias } = useContext(galleryContext);
+  const { medias, postType } = useContext(galleryContext);
 
   return (
-    <Container>
-      <Item1 url={medias[0].url}></Item1>
-    </Container>
+    <Box width="w-full" height="h-full">
+      <Box
+        width="w-full"
+        height="h-full"
+        backgroundImageUrl={medias[0].url}
+        roundedTopLeft={postType === "share" ? "rounded-tl-2xl" : ""}
+        roundedTopRight={postType === "share" ? "rounded-tr-2xl" : ""}
+      />
+    </Box>
   );
 }

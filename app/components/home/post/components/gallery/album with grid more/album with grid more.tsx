@@ -1,11 +1,12 @@
-import Container from "../components/container";
-import Album1 from "./album1/components/album1";
-import Album2 from "./album2/components/album2";
+import Box from "@/app/components/generic/box";
+
+import Album2 from "./album2";
+import Album1 from "./album1";
 
 export default function AlbumWithGridMore() {
   return (
-    <Container>
+    <Box height="md:h-screen h-40" overFlowY="overflow-y-hidden">
       <Album1 />
-    </Container>
+    </Box>
   );
 }
