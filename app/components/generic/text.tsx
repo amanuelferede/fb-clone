@@ -13,7 +13,9 @@ export default function Text({
 }) {
   if (as) {
     if (as === "p") {
-      return <p className={`${fontSize} ${fontWeight} ${color}`}>{children}</p>;
+      return (
+        <p className={`font- ${fontSize} ${fontWeight} ${color}`}>{children}</p>
+      );
     }
     return (
       <span className={`${fontSize} ${fontWeight} ${color}`}>{children}</span>

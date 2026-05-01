@@ -1,9 +1,13 @@
+import { getGridColSpan } from "@/app/csss-mapping/grid/col-span";
+import { GridColSpanValueType } from "@/app/csss-mapping/types/grid/col-span-t";
+
 export default function GridColSpan({
   children,
-  colSpan,
+  span,
 }: {
-  colSpan: string;
+  span: GridColSpanValueType;
   children: React.ReactNode;
 }) {
-  return <div className={`${colSpan}`}>{children}</div>;
+  const _colSpan = getGridColSpan(span) ? getGridColSpan(span) : "";
+  return <div className={`${_colSpan}`}>{children}</div>;
 }

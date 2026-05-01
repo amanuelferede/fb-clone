@@ -1,9 +1,13 @@
+import { getGridRowSpan } from "@/app/csss-mapping/grid/row-span";
+import { GridRowSpanValueType } from "@/app/csss-mapping/types/grid/rows-span-t";
+
 export default function GridRowSpan({
   children,
-  rowSpan,
+  span,
 }: {
-  rowSpan: string;
+  span: GridRowSpanValueType;
   children: React.ReactNode;
 }) {
-  return <div className={`${rowSpan}`}>{children}</div>;
+  const _rowSpan = getGridRowSpan(span) ? getGridRowSpan(span) : "";
+  return <div className={`${_rowSpan}`}>{children}</div>;
 }

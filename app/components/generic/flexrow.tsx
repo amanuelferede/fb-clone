@@ -1,3 +1,15 @@
+import { getAlignItemsValue } from "@/app/csss-mapping/flex/align-items";
+import { getJustifyContent } from "@/app/csss-mapping/flex/justify-content";
+import { getHeight } from "@/app/csss-mapping/height/height";
+import { getSpacingX } from "@/app/csss-mapping/spacing/space-x";
+import { AlignItemsValueType } from "@/app/csss-mapping/types/flex/align-items-t";
+import { JustifyContentValueType } from "@/app/csss-mapping/types/flex/justfiy-content-t";
+import { HeightValueType } from "@/app/csss-mapping/types/height/height-t";
+import { IntegerValueType } from "@/app/csss-mapping/types/values/integer-values-t";
+import { PositiveValueType } from "@/app/csss-mapping/types/values/postive-values-t";
+import { WidthValueType } from "@/app/csss-mapping/types/width/width-t";
+import { getWidth } from "@/app/csss-mapping/width/width";
+
 export default function FlexRow({
   children,
   spaceX,
@@ -7,33 +19,24 @@ export default function FlexRow({
   JustifyContent,
 }: {
   children: React.ReactNode;
-  spaceX: string;
-  height?: string;
-  width?: string;
-  alignItems?: "center" | "start" | "end";
-  JustifyContent?: "center" | "start" | "end" | "around" | "between";
+  spaceX: IntegerValueType;
+  height?: HeightValueType | PositiveValueType;
+  width?: WidthValueType | PositiveValueType;
+  alignItems?: AlignItemsValueType;
+  JustifyContent?: JustifyContentValueType;
 }) {
-  const _alignItemsVarients = new Map<string, string>([
-    ["center", "items-center"],
-    ["end", "items-end"],
-    ["start", "items-start"],
-  ]);
-
-  const _justifyContentVarients = new Map<string, string>([
-    ["center", "justify-center"],
-    ["end", "justify-end"],
-    ["start", "justify-start"],
-    ["around", "justify-around"],
-    ["between", "justify-between"],
-  ]);
-
-  const _justifyContent = JustifyContent
-    ? _justifyContentVarients.get(JustifyContent)
+  const _spaceX = getSpacingX(spaceX) ? getSpacingX(spaceX) : "";
+  const _width = getWidth(width) ? getWidth(width) : "";
+  const _height = getHeight(height) ? getHeight(height) : "";
+  const _alignItems = getAlignItemsValue(alignItems)
+    ? getAlignItemsValue(alignItems)
     : "";
-  const _alignItems = alignItems ? _alignItemsVarients.get(alignItems) : "";
+  const _justifyContent = getJustifyContent(JustifyContent)
+    ? getJustifyContent(JustifyContent)
+    : "";
   return (
     <div
-      className={`${width} ${height} flex ${spaceX} ${_alignItems} ${_justifyContent}`}
+      className={`${_width} ${_height} flex ${_spaceX} ${_alignItems} ${_justifyContent}`}
     >
       {children}
     </div>
