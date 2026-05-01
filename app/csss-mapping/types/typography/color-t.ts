@@ -20,4 +20,15 @@ export type TextColorValueType =
   | "blue-700"
   | "blue-800"
   | "blue-900"
-  | "blue-950";
+  | "blue-950"
+  | "zinc-50"
+  | "zinc-100"
+  | "zinc-200"
+  | "zinc-300"
+  | "zinc-400"
+  | "zinc-500"
+  | "zinc-600"
+  | "zinc-700"
+  | "zinc-800"
+  | "zinc-900"
+  | "zinc-950";

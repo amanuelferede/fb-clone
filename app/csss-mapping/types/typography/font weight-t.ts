@@ -1,1 +1,8 @@
-export type FontWeightValueType = 700 | 800 | 200 | 300 | 500 | 400 | 600;
+export type FontWeightValueType =
+  | "bold"
+  | "extrabold"
+  | "extralight"
+  | "light"
+  | "medium"
+  | "normal"
+  | "semibold";

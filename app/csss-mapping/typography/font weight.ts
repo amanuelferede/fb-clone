@@ -1,15 +1,15 @@
 import { FontWeightValueType } from "../types/typography/font weight-t";
 
-const fontWeightProps = new Map<number, string>([
-  [700, "font-bold"],
-  [800, "font-extrabold"],
-  [200, "font-extralight"],
-  [300, "font-light"],
-  [500, "bold-medium"],
-  [400, "font-normal"],
-  [600, "font-semibold"],
+const fontWeightProps = new Map<string, string>([
+  ["bold", "font-bold"],
+  ["extrabold", "font-extrabold"],
+  ["extralight", "font-extralight"],
+  ["light", "font-light"],
+  ["medium", "bold-medium"],
+  ["normal", "font-normal"],
+  ["semibold", "font-semibold"],
 ]);
 
-export const getFontWeightValue = (key: FontWeightValueType | undefined) => {
+export const getFontWeight = (key: FontWeightValueType | undefined) => {
   return key ? fontWeightProps.get(key) : undefined;
 };

@@ -14,14 +14,14 @@ export default function OriginalUserPost() {
    */
   return (
     <Box
-      width="w-full"
-      shadow="shadow-sm"
-      rounded="rounded-xl"
-      marginTop="mt-3"
-      backgroundColor="bg-white"
+      width="full"
+      shadow="sm"
+      borderRadius="xl"
+      marginTop={3}
+      background="white"
     >
-      <Box paddingX="px-3" paddingTop="pt-3" paddingBottom="2">
-        <FlexRow spaceX="space-x-3">
+      <Box paddingX={3} paddingTop={3} paddingBottom={2}>
+        <FlexRow spaceX={3}>
           <Link href={`/ziamanuel`}>
             <Image
               src={`/users/4.jpg`}
@@ -33,16 +33,16 @@ export default function OriginalUserPost() {
             />
           </Link>
           <FlexCol>
-            <Text fontSize="text-[1rem]" fontWeight="font-semibold">
+            <Text fontSize={1} fontWeight="semibold">
               Amanuel Ferede
             </Text>
-            <Text color="text-zinc-500" fontWeight="font-semibold">
+            <Text color="zinc-500" fontWeight="semibold">
               December 16 at 9:40 PM
             </Text>
           </FlexCol>
         </FlexRow>
       </Box>
-      <Box width="w-full" padding="p-2">
+      <Box width="full" padding={2}>
         <Text>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error
           consequatur, necessitatibus repudiandae nihil sequi eveniet numquam

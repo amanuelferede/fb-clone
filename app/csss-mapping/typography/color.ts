@@ -22,8 +22,19 @@ const textColorProps = new Map<string, string>([
   ["blue-700", "text-blue-700"],
   ["blue-800", "text-blue-800"],
   ["blue-900", "text-blue-950"],
+
+  ["zinc-50", "text-zinc-50"],
+  ["zinc-100", "text-zinc-100"],
+  ["zinc-200", "text-zinc-200"],
+  ["zinc-300", "text-zinc-300"],
+  ["zinc-400", "text-zinc-400"],
+  ["zinc-500", "text-zinc-500"],
+  ["zinc-600", "text-zinc-600"],
+  ["zinc-700", "text-zinc-700"],
+  ["zinc-800", "text-zinc-800"],
+  ["zinc-900", "text-zinc-950"],
 ]);
 
-export const getColorValue = (key: TextColorValueType | undefined) => {
+export const getTextColor = (key: TextColorValueType | undefined) => {
   return key ? textColorProps.get(key) : undefined;
 };

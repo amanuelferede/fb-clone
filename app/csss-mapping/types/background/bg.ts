@@ -1,4 +1,5 @@
 export type BgValueType =
+  | "white"
   | "blue-50"
   | "blue-100"
   | "blue-200"
@@ -9,4 +10,15 @@ export type BgValueType =
   | "blue-700"
   | "blue-800"
   | "blue-900"
-  | "blue-950";
+  | "blue-950"
+  | "gray-50"
+  | "gray-100"
+  | "gray-200"
+  | "gray-300"
+  | "gray-400"
+  | "gray-500"
+  | "gray-600"
+  | "gray-700"
+  | "gray-800"
+  | "gray-900"
+  | "gray-950";
