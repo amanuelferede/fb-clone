@@ -1,0 +1,11 @@
+import Album2 from "./album2";
+import Album1 from "./album1";
+import AlbumContainer from "../album container";
+
+export default function AlbumWithGridTwo() {
+  return (
+    <AlbumContainer>
+      <Album2 />
+    </AlbumContainer>
+  );
+}

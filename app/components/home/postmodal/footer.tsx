@@ -44,7 +44,7 @@ export default function Footer() {
   };
   return (
     <div>
-      <div className="flex items-center justify-between space-x-2 my-2 py-3 px-4 rounded-xl border-2 border-gray-200">
+      <div className="mx-4 flex items-center justify-between space-x-2 my-2 py-3 px-4 rounded-xl border-2 border-gray-200">
         <p className="font-semibold">Add to your post</p>
         <div className="flex space-x-4 cursor-pointer">
           <input
@@ -99,9 +99,11 @@ export default function Footer() {
           />
         </div>
       </div>
-      <button className=" block w-full py-2 px-3 bg-blue-600 text-white rounded-md text-center">
-        Post
-      </button>
+      <div className="p-2.5">
+        <button className="block w-full py-2 px-3 bg-blue-600 text-white rounded-md text-center">
+          Post
+        </button>
+      </div>
     </div>
   );
 }

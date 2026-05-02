@@ -5,7 +5,7 @@ import { CgClose } from "react-icons/cg";
 import { FaPencilAlt } from "react-icons/fa";
 import { UploadedMedia } from "./types";
 import { useAppDispatch } from "@/app/store/hooks";
-import Gallery from "../../post/components/gallery/gallery";
+import Gallery from "../../feed/gallery/gallery";
 
 export default function UploadedMedias({
   uploadedMedias,

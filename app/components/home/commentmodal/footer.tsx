@@ -3,8 +3,8 @@ import { useAppDispatch, useAppSelector } from "@/app/store/hooks";
 import { openReactionModal } from "@/app/store/slices/post";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import ReactAPost from "../post/reactpost/reactionbox";
 import ReactionModal from "../reactionsmodal/reactionsmodal";
+import ReactAPost from "../feed/reactpost/reactionbox";
 
 export default function Footer() {
   const dispatch = useAppDispatch();

@@ -1,0 +1,17 @@
+import Footer from "../../common/footer";
+import PostContent from "../../content";
+import PostCard from "../../postcard";
+import Header from "../header";
+
+export default function OriginalGroupPost() {
+  /**
+   * const [isPending, formAction, ]
+   */
+  return (
+    <PostCard>
+      <Header />
+      <PostContent />
+      <Footer />
+    </PostCard>
+  );
+}

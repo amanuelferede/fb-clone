@@ -6,13 +6,12 @@ export const medias = [
   },
   {
     type: "image",
-    url: "/users/8.jpg",
+    url: "/users/18.jpg",
     id: 1,
   },
   {
     type: "image",
-    url: "/users/17.jpg",
+    url: "/users/7.jpg",
     id: 3,
   },
-
 ];

@@ -1,0 +1,16 @@
+import { medias } from "@/app/seed/faker/medias";
+import Gallery from "./gallery/gallery";
+
+export default function PostContent() {
+  return (
+    <>
+      <p className="mt-1.5">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi
+        excepturi tenetur beatae, culpa velit impedit, cum inventore aliquid
+        natus ex numquam! Aut repellat fugiat libero labore unde sunt. Ab,
+        nesciunt.
+      </p>
+      <Gallery medias={medias} postType="original" />
+    </>
+  );
+}
