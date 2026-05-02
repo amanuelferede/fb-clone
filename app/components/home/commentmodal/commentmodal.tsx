@@ -8,7 +8,7 @@ import CommentsSkeleton from "../skeletons/comments";
 import { openCommentModal } from "@/app/store/slices/post";
 import { useAppDispatch } from "@/app/store/hooks";
 import Footer from "./footer";
-import SharedPagePost from "../feed/shared/grouppost";
+import OriginalUserPost from "./post/original user post";
 
 export default function CommentModal() {
   const dispatch = useAppDispatch();
@@ -29,7 +29,7 @@ export default function CommentModal() {
           />
         </div>
         <div className="max-h-93 overflow-y-auto custom-scrollbar m-0">
-          <SharedPagePost />
+          <OriginalUserPost />
           <Footer />
           {isLoading && <CommentsSkeleton />}
 

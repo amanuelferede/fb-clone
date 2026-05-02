@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 export default function Header() {
   return (
-    <div className="flex space-x-3">
+    <div className="flex space-x-3 px-2.5 pt-2.5 ">
       <Link href={`/ziamanuel`}>
         <Image
           src={`/users/4.jpg`}
