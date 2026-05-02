@@ -1,16 +1,17 @@
 import { Suspense } from "react";
 import AddPost from "./components/home/addpost/addpost";
 import Contacts from "./components/home/contacts/contacts";
-import Feed from "./components/home/feed";
 import SideBar from "./components/home/sidebar";
 import StorySkeleton from "./components/home/skeletons/story";
 
 import TopBar from "./components/navbar";
 import Stories from "./components/home/story/stories";
+import FeedSkeleton from "./components/home/skeletons/feed";
+import InitialFeed from "./components/home/initial feed";
 
 export default function Home() {
   return (
-  <>
+    <>
       <TopBar />
       <div className="font-sans min-h-screen flex space-x-20 bg-gray-100">
         <SideBar />
@@ -19,11 +20,12 @@ export default function Home() {
           <Suspense fallback={<StorySkeleton />}>
             <Stories />
           </Suspense>
-          <Feed />
+          <Suspense fallback={<FeedSkeleton />}>
+            <InitialFeed />
+          </Suspense>
         </div>
         <Contacts />
       </div>
     </>
-
   );
 }
