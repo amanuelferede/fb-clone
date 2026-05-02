@@ -14,6 +14,7 @@ export default function Album2() {
           style={{
             backgroundImage: "url(" + `${medias[0].url}` + ")",
             backgroundPosition: "top center",
+
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
           }}
