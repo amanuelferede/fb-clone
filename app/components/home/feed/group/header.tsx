@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 export default function Header() {
   return (
-    <div className="flex space-x-3 px-2.5 pt-2.5">
+    <div className="flex space-x-3 px-2.5 pt-2.5 mb-2.5">
       <div className="w-12 h-12 relative rounded-lg">
         <Link href={`/ziamanuel`}>
           <Image

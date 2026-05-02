@@ -21,7 +21,7 @@ export default function Album2() {
           ></div>
         </div>
         <div className="row-span-5">
-          <div className="h-full grid grid-cols-4 gap-1">
+          <div className="grid grid-cols-4 h-full gap-1">
             {medias.slice(1, 5).map((media, index) => (
               <div
                 className="h-full relative"

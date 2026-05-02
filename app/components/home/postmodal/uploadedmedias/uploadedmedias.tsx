@@ -1,6 +1,5 @@
 "use client";
 import { removeUploadedMedias } from "@/app/store/slices/addpost";
-import { BiSmile } from "react-icons/bi";
 import { CgClose } from "react-icons/cg";
 import { FaPencilAlt } from "react-icons/fa";
 import { UploadedMedia } from "./types";
@@ -16,8 +15,7 @@ export default function UploadedMedias({
 
   return (
     <div>
-      <BiSmile className="w-8 h-8 text-zinc-400 absolute right-2 top-2" />
-      <div className="h-120 relative">
+      <div className="h-full relative overflow-y-hidden">
         <Gallery postType="uploaded" medias={uploadedMedias} />
         <div className=" absolute top-0 bottom-0 left-0 right-0 bg-black/20"></div>
         <div className="absolute top-3 left-3 right-3 flex items-center justify-between">

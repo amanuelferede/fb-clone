@@ -10,6 +10,7 @@ import { ChangeEvent } from "react";
 import Header from "./header";
 import ModalContainer from "./modal container";
 import CurrentUser from "./current user";
+import BodyContainer from "./body container";
 export default function PostModal() {
   const dispatch = useAppDispatch();
 
@@ -23,7 +24,7 @@ export default function PostModal() {
     <ModalContainer>
       <Header />
       <CurrentUser />
-      <div className="max-h-73 p-2.5 overflow-y-auto relative">
+      <BodyContainer>
         <TextBox
           onChangePostContent={onChangePostContent}
           postContent={postContent}
@@ -32,7 +33,8 @@ export default function PostModal() {
         {uploadedMedias.length > 0 && (
           <UploadedMedias uploadedMedias={uploadedMedias} />
         )}
-      </div>
+      </BodyContainer>
+
       <ColorCard
         postContent={postContent}
         uploadedMediaLength={uploadedMedias.at.length}
