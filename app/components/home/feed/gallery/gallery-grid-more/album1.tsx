@@ -11,10 +11,10 @@ export default function Album1() {
       <div className="grid grid-cols-2">
         <div className="h-full">
           <div className="grid grid-rows-2 h-full">
-            {medias.slice(0, 2).map((media) => (
+            {medias.slice(0, 2).map((media, index) => (
               <div
                 key={media.id}
-                className="w-full h-1/2"
+                className={`w-full h-1/2 ${index === 0 && postType === "share" ? "rounded-tl-2xl" : ""}`}
                 style={{
                   backgroundImage: "url(" + `${media.url}` + ")",
                   backgroundPosition: "top center",
@@ -30,7 +30,7 @@ export default function Album1() {
             {medias.slice(2, 5).map((media, index) => (
               <div
                 key={media.id}
-                className="relative w-full h-4/12"
+                className={`w-full h-1/2 ${index === 0 && postType === "share" ? "rounded-tl-2xl" : ""}`}
                 style={{
                   backgroundImage: "url(" + `${media.url}` + ")",
                   backgroundPosition: "top center",
