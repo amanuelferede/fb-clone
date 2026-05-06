@@ -17,7 +17,7 @@ export default function Header() {
       <div className="flex flex-col">
         <p className="text-[1rem] font-semibold">December 16 at 9:40 PM</p>
         <p className="text-[1rem] text-zinc-500 font-semibold">
-          Amanuel Ferede
+          Ethiopian Broadcasting Corporation.
         </p>
       </div>
     </div>

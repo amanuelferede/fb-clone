@@ -7,31 +7,46 @@ export default function Album1() {
 
   return (
     <>
-      <div className="grid grid-cols-12 h-full gap-1">
-        <div className="col-span-7">
-          <div
-            className={`h-full ${postType === "share" ? "rounded-tl-2xl" : ""}`}
-            style={{
-              backgroundImage: "url(" + `${medias[0].url}` + ")",
-              backgroundPosition: "top center",
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
-            }}
-          ></div>
-        </div>
-        <div className="col-span-5">
-          <div className="grid grid-rows-4 gap-1">
-            {medias.slice(1).map((media, index) => (
+      <div className="grid grid-cols-2">
+        <div className="h-full">
+          <div className="grid grid-rows-2 h-full">
+            {medias.slice(0, 2).map((media) => (
               <div
+                key={media.id}
+                className="w-full h-1/2"
                 style={{
                   backgroundImage: "url(" + `${media.url}` + ")",
                   backgroundPosition: "top center",
                   backgroundSize: "cover",
                   backgroundRepeat: "no-repeat",
                 }}
-                key={media.id}
-                className={`h-[25vh] ${index === 1 && postType === "share" ? "rounded-tr-2xl" : ""}`}
               ></div>
+            ))}
+          </div>
+        </div>
+        <div className="h-full">
+          <div className="grid grid-rows-3 h-full">
+            {medias.slice(2).map((media, index) => (
+              <div
+                key={media.id}
+                className="relative w-full h-4/12"
+                style={{
+                  backgroundImage: "url(" + `${media.url}` + ")",
+                  backgroundPosition: "top center",
+                  backgroundSize: "cover",
+                  backgroundRepeat: "no-repeat",
+                }}
+              >
+                {index === 3 && (
+                  <div
+                    className={`flex items-center justify-center absolute z-10 w-full h-full bg-black/50`}
+                  >
+                    <p className="text-4xl text-white font-semibold">
+                      {medias.length - 5} +
+                    </p>
+                  </div>
+                )}
+              </div>
             ))}
           </div>
         </div>
