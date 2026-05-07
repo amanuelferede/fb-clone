@@ -3,5 +3,5 @@ export default function AlbumContainer({
 }: {
   children: React.ReactNode;
 }) {
-  return <div className="md:h-screen h-40 overflow-y-hidden">{children}</div>;
+  return <div className="md:h-[90vh] h-40 overflow-y-hidden">{children}</div>;
 }

@@ -1,5 +1,5 @@
 import Footer from "../../common/footer";
-import PostContent from "../../content";
+import PostContent from "../../post content";
 import PostCard from "../../postcard";
 import Header from "../header";
 

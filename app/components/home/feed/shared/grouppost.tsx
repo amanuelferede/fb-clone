@@ -1,12 +1,12 @@
 import SharePostContainer from "../shared post container";
 import Header from "../group/header";
-import PostContent from "../content";
+import SharedPostContent from "../shared post content";
 
 export default function SharedPagePost() {
   return (
     <SharePostContainer>
       <Header />
-      <PostContent />
+      <SharedPostContent />
     </SharePostContainer>
   );
 }

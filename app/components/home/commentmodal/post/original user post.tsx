@@ -1,4 +1,4 @@
-import PostContent from "../../feed/content";
+import PostContent from "../../feed/post content";
 import Header from "../../feed/user/header";
 
 export default function OriginalUserPost() {
