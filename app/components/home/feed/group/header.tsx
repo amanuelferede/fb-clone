@@ -28,10 +28,10 @@ export default function Header() {
       </div>
 
       <div className="flex flex-col">
+        <p className="text-[1rem]  font-semibold">React developers</p>
         <p className="text-[1rem] text-zinc-500 font-semibold">
-          React developers
+          December 16 at 9:40 PM
         </p>
-        <p className="text-[1rem] font-semibold">December 16 at 9:40 PM</p>
       </div>
     </div>
   );

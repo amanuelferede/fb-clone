@@ -17,18 +17,19 @@ export default function UploadedMedias({
     <div>
       <div className="h-full relative overflow-y-hidden">
         <Gallery postType="uploaded" medias={uploadedMedias} />
-        <div className=" absolute top-0 bottom-0 left-0 right-0 bg-black/20"></div>
-        <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
-          <div className="flex space-x-2 rounded-lg items-center bg-gray-50 py-1.5 px-2">
-            <FaPencilAlt className="w-4 h-4 " />
-            <p className="text-black font-semibold ">Edit all</p>
+        <div className="p-3 absolute top-0 bottom-0 left-0 right-0 bg-black/20">
+          <div className=" flex items-center justify-between">
+            <div className="flex space-x-2 rounded-lg items-center bg-gray-50 py-1.5 px-2">
+              <FaPencilAlt className="w-4 h-4 " />
+              <p className="text-black font-semibold ">Edit all</p>
+            </div>
+            <CgClose
+              className="w-8 h-8 cursor-pointer text-zinc-500 rounded-full bg-gray-50 p-1"
+              onClick={() => {
+                dispatch(removeUploadedMedias());
+              }}
+            />
           </div>
-          <CgClose
-            className="w-8 h-8 cursor-pointer text-zinc-500 rounded-full bg-gray-50 p-1"
-            onClick={() => {
-              dispatch(removeUploadedMedias());
-            }}
-          />
         </div>
       </div>
     </div>

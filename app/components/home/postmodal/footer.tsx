@@ -100,7 +100,10 @@ export default function Footer() {
         </div>
       </div>
       <div className="p-2.5">
-        <button className="block w-full py-2 px-3 bg-blue-600 text-white rounded-md text-center">
+        <button
+          type="submit"
+          className="block w-full py-2 px-3 bg-blue-600 text-white rounded-md text-center"
+        >
           Post
         </button>
       </div>

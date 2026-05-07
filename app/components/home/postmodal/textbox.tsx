@@ -22,6 +22,7 @@ export default function TextBox({
         } block py-3 resize-none focus:outline-none w-full field-sizing-content ${
           uploadedMediasLength > 0 ? "min-h-10" : "min-h-24 "
         }`}
+        name="post-content"
         placeholder="What on your mind, Amanuel?"
         onChange={onChangePostContent}
         value={postContent}

@@ -5,7 +5,7 @@ import AlbumContainer from "../album container";
 export default function AlbumWithGridMore() {
   return (
     <AlbumContainer>
-      <Album2 />
+      <Album1 />
     </AlbumContainer>
   );
 }

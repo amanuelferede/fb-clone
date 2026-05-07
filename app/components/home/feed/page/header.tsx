@@ -15,9 +15,11 @@ export default function Header() {
       </Link>
 
       <div className="flex flex-col">
-        <p className="text-[1rem] font-semibold">December 16 at 9:40 PM</p>
-        <p className="text-[1rem] text-zinc-500 font-semibold">
+        <p className="text-[1rem]  font-semibold">
           Ethiopian Broadcasting Corporation.
+        </p>
+        <p className="text-[1rem] text-zinc-500 font-semibold">
+          December 16 at 9:40 PM
         </p>
       </div>
     </div>
