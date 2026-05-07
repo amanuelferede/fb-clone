@@ -7,7 +7,7 @@ export default function Contacts() {
 
   return (
     <div
-      className="md:w-[22%] w-full pt-12  h-full md:block hidden fixed top-0 right-0 bottom-0 z-30 "
+      className="md:w-[27.5%] w-full pl-12 pt-12  h-full md:block hidden fixed top-0 right-0 bottom-0 z-30 "
       onMouseOver={() => setShowScrollBar(true)}
       onMouseLeave={() => setShowScrollBar(false)}
     >

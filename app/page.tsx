@@ -15,7 +15,7 @@ export default function Home() {
       <TopBar />
       <div className="font-sans min-h-screen flex space-x-20 bg-gray-100">
         <SideBar />
-        <div className="md:w-[50%]   md:ml-[24.5%] md:mr-[25.5%] mr-0 ml-0 w-full pt-18 mb-3">
+        <div className="md:w-[45%]   md:ml-[27.5%] md:mr-[27.5%] mr-0 ml-0 w-full pt-18 mb-3">
           <AddPost />
           <Suspense fallback={<StorySkeleton />}>
             <Stories />
