@@ -20,8 +20,20 @@ enum Gender {
   custom
 }
 
+enum FeedType {
+  userPost
+  pagePost
+  groupPost
+}
+
+enum ShareType {
+  originalUserPost
+  originalPagePost
+  originalGroupPost
+}
+
 model User {
-  id          String   @id @default(uuid())
+  id          String              @id @default(uuid())
   firstName   String
   lastName    String
   birthDate   DateTime
@@ -29,4 +41,185 @@ model User {
   phoneNumber String
   email       String
   password    String
+  // managed pages
+  pages       Page[]
+  // managed groups
+  groups      Group[]
+  // its own posts
+  ownPosts    OriginalUserPost[]
+  // shared posts
+  sharedPosts UserSharePost[]
+  // group posts
+  groupPosts  OriginalGroupPost[]
+
+  // to group share posts
+  toGroupSharePosts ToGroupSharePost[]
+  // profile
+  profile           UserProfile?
+  createdAt         DateTime
+  updatedAt         DateTime
+}
+
+model Page {
+  id                String             @id @default(uuid())
+  userId            String
+  admin             User               @relation(fields: [userId], references: [id])
+  name              String
+  category          String?
+  profilePictureUrl String
+  coverPhotoUrl     String?
+  // its own posts
+  ownPosts          OriginalPagePost[]
+  // shared posts
+  sharedPosts       PageSharePost[]
+  createdAt         DateTime
+  updatedAt         DateTime
+}
+
+model Group {
+  id                String              @id @default(uuid())
+  userId            String
+  admin             User                @relation(fields: [userId], references: [id])
+  name              String
+  category          String?
+  profilePictureUrl String
+  coverPhotoUrl     String?
+  // its own posts
+  ownPosts          OriginalGroupPost[]
+  // shared posts
+  sharedPosts       ToGroupSharePost[]
+  createdAt         DateTime
+  updatedAt         DateTime
+}
+
+model UserProfile {
+  id                String  @id @default(uuid())
+  userId            String  @unique
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  profilePictureUrl String?
+  coverPhotoUrl     String?
+}
+
+model Media {
+  id     String @id @default(uuid())
+  url    String
+  width  Int?
+  height Int?
+
+  originalUserPostId  String?
+  originalPagePostId  String?
+  originalGroupPostId String?
+  originalUserPost    OriginalUserPost?  @relation(fields: [originalUserPostId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  originalPagePost    OriginalPagePost?  @relation(fields: [originalPagePostId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  originalGroupPost   OriginalGroupPost? @relation(fields: [originalGroupPostId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  createdAt           DateTime
+  updatedAt           DateTime
+}
+
+model OriginalUserPost {
+  id           String          @id @default(uuid())
+  userId       String
+  user         User            @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  content      String?
+  medias       Media[]
+  // shares by user
+  sharesByUser UserSharePost[]
+
+  // shares by page
+  sharesByPage  PageSharePost[]
+  // shares to group
+  sharesToGroup ToGroupSharePost[]
+  createdAt     DateTime
+  updatedAt     DateTime
+}
+
+model UserSharePost {
+  id                  String             @id @default(uuid())
+  shareType           ShareType
+  userId              String
+  user                User               @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  originalUserPostId  String?
+  originalPagePostId  String?
+  originalGroupPostId String?
+  originalUserPost    OriginalUserPost?  @relation(fields: [originalUserPostId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  originalPagePost    OriginalPagePost?  @relation(fields: [originalPagePostId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  originalGroupPost   OriginalGroupPost? @relation(fields: [originalGroupPostId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  content             String?
+  createdAt           DateTime
+  updatedAt           DateTime
+}
+
+model OriginalPagePost {
+  id            String             @id @default(uuid())
+  pageId        String
+  page          Page               @relation(fields: [pageId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  content       String?
+  medias        Media[]
+  // shares by user
+  sharesByUser  UserSharePost[]
+  // shares by page
+  sharesByPage  PageSharePost[]
+  // shares to group
+  sharesToGroup ToGroupSharePost[]
+  createdAt     DateTime
+  updatedAt     DateTime
+}
+
+model PageSharePost {
+  id      String  @id @default(uuid())
+  pageId  String
+  page    Page    @relation(fields: [pageId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  content String?
+
+  originalUserPostId  String?
+  originalPagePostId  String?
+  originalGroupPostId String?
+  originalUserPost    OriginalUserPost?  @relation(fields: [originalUserPostId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  originalPagePost    OriginalPagePost?  @relation(fields: [originalPagePostId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  originalGroupPost   OriginalGroupPost? @relation(fields: [originalGroupPostId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  createdAt           DateTime
+  updatedAt           DateTime
+}
+
+model OriginalGroupPost {
+  id      String  @id @default(uuid())
+  userId  String
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  groupId String
+  group   Group   @relation(fields: [groupId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  content String?
+  medias  Media[]
+
+  // shares by the user
+  usersByUser   UserSharePost[]
+  // shares by page
+  sharesByPage  PageSharePost[]
+  // shares to group
+  sharesToGroup ToGroupSharePost[]
+  createdAt     DateTime
+  updatedAt     DateTime
+}
+
+model ToGroupSharePost {
+  id                  String             @id @default(uuid())
+  userId              String
+  user                User               @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  groupId             String
+  group               Group              @relation(fields: [groupId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  originalUserPostId  String?
+  originalPagePostId  String?
+  originalGroupPostId String?
+  originalUserPost    OriginalUserPost?  @relation(fields: [originalUserPostId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  originalPagePost    OriginalPagePost?  @relation(fields: [originalPagePostId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  originalGroupPost   OriginalGroupPost? @relation(fields: [originalGroupPostId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  content             String?
+  createdAt           DateTime
+  updatedAt           DateTime
+}
+
+model Feed {
+  id        String   @id @default(uuid())
+  feedType  FeedType
+  createdAt DateTime
+  updatedAt DateTime
 }
