@@ -4,8 +4,8 @@ import PageSharePost from "./share/post";
 export default function PagePost() {
   return (
     <>
-      <OriginalPagePost />
-      <PageSharePost />
+      <OriginalPagePost refFrom="post" />
+      <PageSharePost refFrom="post" />
     </>
   );
 }

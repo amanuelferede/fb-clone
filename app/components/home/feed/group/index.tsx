@@ -4,8 +4,8 @@ import ToGroupSharePost from "./share/post";
 export default function GroupPost() {
   return (
     <div className="">
-      <OriginalGroupPost />
-      <ToGroupSharePost />
+      <OriginalGroupPost refFrom="post" />
+      <ToGroupSharePost refFrom="post" />
     </div>
   );
 }

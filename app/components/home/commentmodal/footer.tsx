@@ -1,5 +1,5 @@
 import Image from "next/image";
-export default function Footer() {
+export default function ModalFooter() {
   return (
     <div className="pb-3 pt-4  px-4 flex items-center space-x-2">
       <Image

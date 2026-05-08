@@ -3,7 +3,11 @@ import PostContent from "../../original content";
 import PostCard from "../../postcard";
 import Header from "../header";
 
-export default function OriginalPagePost() {
+export default function OriginalPagePost({
+  refFrom,
+}: {
+  refFrom?: "post" | "commentModal";
+}) {
   /**
    * const [isPending, formAction, ]
    */
@@ -11,7 +15,7 @@ export default function OriginalPagePost() {
     <PostCard>
       <Header />
       <PostContent />
-      <Footer />
+      {refFrom && refFrom === "post" && <Footer />}
     </PostCard>
   );
 }

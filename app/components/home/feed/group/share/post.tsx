@@ -3,12 +3,16 @@ import PostCard from "../../postcard";
 import ShareContent from "../../share content";
 import Header from "../header";
 
-export default function ToGroupSharePost() {
+export default function ToGroupSharePost({
+  refFrom,
+}: {
+  refFrom?: "post" | "commentModal";
+}) {
   return (
     <PostCard>
       <Header />
       <ShareContent />
-      <Footer />
+      {refFrom && refFrom === "post" && <Footer />}
     </PostCard>
   );
 }

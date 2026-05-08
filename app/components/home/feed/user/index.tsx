@@ -4,8 +4,8 @@ import UserSharePost from "./share/post";
 export default function UserPost() {
   return (
     <>
-      <OriginalUserPost />
-      <UserSharePost />
+      <OriginalUserPost refFrom="post" />
+      <UserSharePost refFrom="post" />
     </>
   );
 }

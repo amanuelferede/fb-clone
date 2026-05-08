@@ -103,6 +103,7 @@ model UserProfile {
 model Media {
   id     String @id @default(uuid())
   url    String
+  type   String
   width  Int?
   height Int?
 

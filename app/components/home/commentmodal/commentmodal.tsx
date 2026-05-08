@@ -5,31 +5,28 @@ import { useState } from "react";
 import CommentsSkeleton from "../skeletons/comments";
 import { openCommentModal } from "@/app/store/slices/post";
 import { useAppDispatch } from "@/app/store/hooks";
-import Footer from "./like comment share";
-import OriginalUserPost from "./post/original user post";
 import ModalContainer from "./modal container";
 import Header from "./header";
 import BodyContainer from "./body container";
-import LikeCommentShare from "./like comment share";
+import Footer from "../feed/common/footer";
+import ModalFooter from "./footer";
+import OriginalUserPost from "../feed/user/original/post";
 
 export default function CommentModal() {
-  const dispatch = useAppDispatch();
+  const [isLoading] = useState<boolean>(false);
 
-  const [isLoading] = useState<boolean>(true);
-  const closeModal = () => {
-    dispatch(openCommentModal(false));
-  };
   return (
     <ModalContainer>
-      <Header closeModal={closeModal} />
+      <Header />
       <BodyContainer>
-        <OriginalUserPost />
-        <LikeCommentShare />
-        {isLoading && <CommentsSkeleton />}
+        <OriginalUserPost refFrom="commentModal" />
+        <Footer />
+
+        {/* {isLoading && <CommentsSkeleton />} */}
 
         {!isLoading && <Comments />}
       </BodyContainer>
-      <Footer />
+      <ModalFooter />
     </ModalContainer>
   );
 }

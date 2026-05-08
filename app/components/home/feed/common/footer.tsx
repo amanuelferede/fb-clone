@@ -1,19 +1,12 @@
 "use client";
-import { useAppDispatch, useAppSelector } from "@/app/store/hooks";
+import { useAppDispatch } from "@/app/store/hooks";
 import { openCommentModal, openReactionModal } from "@/app/store/slices/post";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import CommentModal from "../../commentmodal/commentmodal";
 import ReactAPost from "../reactpost/reactionbox";
-import ReactionModal from "../../reactionsmodal/reactionsmodal";
 export default function Footer() {
   const dispatch = useAppDispatch();
-  const isCommentModalOpen = useAppSelector(
-    (state) => state.post.isCommentModalOpen
-  );
-  const isReactionModalOpen = useAppSelector(
-    (state) => state.post.isReactionModalOpen
-  );
+
   const [toShowReactionBox, settoShowReactionBox] = useState<boolean>(false);
 
   const timoutId = useRef<NodeJS.Timeout | null>(null);
@@ -130,9 +123,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
-      {isCommentModalOpen && <CommentModal />}
-      {isReactionModalOpen && <ReactionModal />}
     </>
   );
 }
