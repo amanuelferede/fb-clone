@@ -50,14 +50,14 @@ export default function Contacts() {
               key={index}
             >
               <Image
-                src={user.pic}
+                src={user.profilepic}
                 width={0}
                 height={0}
                 sizes="100hv"
                 alt="story"
                 className="w-9 h-9 rounded-full object-cover border border-zinc-200 shadow-sm"
               />
-              <p>{user.name}</p>
+              <p>{user.fname}</p>
             </div>
           ))}
         </div>
