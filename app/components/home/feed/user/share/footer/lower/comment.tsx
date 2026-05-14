@@ -1,11 +1,12 @@
 "use client";
 import { useAppDispatch } from "@/app/store/hooks";
+import { openCommentModalForThisPost } from "@/app/store/slices/post/user/share";
 import Image from "next/image";
 export default function Comment() {
   const dispatch = useAppDispatch();
 
   const showCommentModal = () => {
-    dispatch(openCommentModal);
+    dispatch(openCommentModalForThisPost(true));
   };
   return (
     <div
