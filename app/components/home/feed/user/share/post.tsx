@@ -1,18 +1,17 @@
-import Footer from "../../common/footer";
-import PostCard from "../../postcard";
-import ShareContent from "../../share content";
-import Header from "../header";
+import PostCard from "@/app/components/generic/post card/post card";
+import Header from "./header";
+import Content from "./content";
+import Footer from "./footer/footer";
 
-export default function UserSharePost({
-  refFrom,
-}: {
-  refFrom?: "post" | "commentModal";
-}) {
+export default function OriginalUserPost() {
+  /**
+   * const [isPending, formAction, ]
+   */
   return (
     <PostCard>
       <Header />
-      <ShareContent />
-      {refFrom && refFrom === "post" && <Footer />}
+      <Content />
+      <Footer />
     </PostCard>
   );
 }

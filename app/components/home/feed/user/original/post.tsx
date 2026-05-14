@@ -1,21 +1,17 @@
-import Footer from "../../common/footer";
-import PostContent from "../../original content";
-import PostCard from "../../postcard";
-import Header from "../header";
+import PostCard from "@/app/components/generic/post card/post card";
+import Header from "./header";
+import Content from "./content";
+import Footer from "./footer/footer";
 
-export default function OriginalUserPost({
-  refFrom,
-}: {
-  refFrom?: "post" | "commentModal";
-}) {
+export default function OriginalUserPost() {
   /**
    * const [isPending, formAction, ]
    */
   return (
     <PostCard>
       <Header />
-      <PostContent />
-      {refFrom && refFrom === "post" && <Footer />}
+      <Content />
+      <Footer />
     </PostCard>
   );
 }
