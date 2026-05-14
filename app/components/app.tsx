@@ -8,20 +8,14 @@ export default function App({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const isAddPostModalOpened = useAppSelector((state) => state.addPost.isOpen);
-  const isCommentModalOpend = useAppSelector(
-    (state) => state.post.isCommentModalOpen
-  );
-  const isReactModalOPened = useAppSelector(
-    (state) => state.post.isReactionModalOpen
-  );
+  const isModalOpen = useAppSelector((state) => state.modalState.isOpen);
 
   useEffect(() => {
-    if (isAddPostModalOpened || isCommentModalOpend || isReactModalOPened) {
+    if (isModalOpen) {
       document.body.style.overflowY = "hidden";
     } else {
       document.body.style.overflowY = "auto";
     }
-  }, [isAddPostModalOpened, isCommentModalOpend, isReactModalOPened]);
+  }, [isModalOpen]);
   return <>{children}</>;
 }

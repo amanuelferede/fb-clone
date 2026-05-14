@@ -72,7 +72,7 @@ export default function Stories() {
                     >
                       <Image
                         alt="Facebook"
-                        src={`${users[index].pic}`}
+                        src={`${users[index].profilepic}`}
                         width={0}
                         height={0}
                         sizes="100vh"
@@ -80,7 +80,7 @@ export default function Stories() {
                       />
                       <div className="flex flex-col">
                         <p className="text-[0.91rem]  font-semibold">
-                          {users[index].name}
+                          {users[index].fname}
                         </p>
                         <div className="flex space-x-2">
                           <p className="text-[0.89rem]">44 min</p>

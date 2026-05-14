@@ -6,8 +6,8 @@ import { FaCamera } from "react-icons/fa6";
 import { IoIosArrowDown, IoIosMore, IoMdArrowDropdown } from "react-icons/io";
 import { users } from "../seed/faker/user";
 import { useEffect, useState } from "react";
-import OriginalUserPost from "../components/home/feed/user/original/post";
-import UserSharePost from "../components/home/feed/user/share/post";
+import OriginalUserPost from "../components/home/feed/post/user/original/post";
+import UserSharePost from "../components/home/feed/post/user/share/post";
 
 export default function UserProfile() {
   const [scrollPosition, setScrollPosition] = useState<number>(0);
@@ -202,7 +202,7 @@ export default function UserProfile() {
                           sizes="100vh"
                           className="w-full h-full object-cover rounded-xl"
                         />
-                        <p className="text-sm">{users[index].name}</p>
+                        <p className="text-sm">{users[index].fname}</p>
                       </div>
                     );
                   }
@@ -264,11 +264,11 @@ export default function UserProfile() {
               </div>
             </div>
             <div className="mb-4 bg-white rounded-2xl">
-              <OriginalUserPost refFrom="post" />
+              <OriginalUserPost />
             </div>
 
             <div className="mb-4 bg-white rounded-2xl">
-              <UserSharePost refFrom="post" />
+              <UserSharePost />
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
-import GroupPost from "./feed/group";
-import PagePost from "./feed/page";
-import UserPost from "./feed/user";
+import GroupPost from "./feed/post/group";
+import PagePost from "./feed/post/page";
+import UserPost from "./feed/post/user";
 
 export default function FeedClient() {
   return (

@@ -1,11 +1,9 @@
 import Image from "next/image";
 import { FiMoreHorizontal } from "react-icons/fi";
-import Comments from "../components/home/photo/comments";
 import { CgClose } from "react-icons/cg";
 import { BsZoomIn, BsZoomOut } from "react-icons/bs";
 import { BiFullscreen, BiTag } from "react-icons/bi";
 import Link from "next/link";
-import Footer from "../components/home/photo/footer";
 export default function Photo() {
   return (
     <>
@@ -75,8 +73,7 @@ export default function Photo() {
               </div>
             </div>
 
-            <Footer />
-            <Comments />
+            {/** footer and comment */}
           </div>
         </div>
       </div>

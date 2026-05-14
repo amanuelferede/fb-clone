@@ -6,9 +6,11 @@ import { originalPagePostSlice } from "./slices/post/page/origianl";
 import { pageSharePostSlice } from "./slices/post/page/share";
 import { originalPostSlice } from "./slices/post/group/origianl";
 import { toGroupSharePostSlice } from "./slices/post/group/share";
+import { ModalStateSlice } from "./slices/modal state";
 export const store = configureStore({
   reducer: {
     addPost: addPostSlice.reducer,
+    modalState: ModalStateSlice.reducer,
     originalUserPost: OriginalUserPostSlice.reducer,
     userSharePost: userSharePostSlice.reducer,
     originalPagePost: originalPagePostSlice.reducer,
