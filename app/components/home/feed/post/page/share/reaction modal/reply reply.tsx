@@ -1,18 +1,19 @@
 "use client";
+
 import ReactionModalBody from "@/app/components/generic/reaction modal/body";
 import ReactionModalHeader from "@/app/components/generic/reaction modal/header";
 import ReactionModal from "@/app/components/generic/reaction modal/modal";
 import Reactors from "@/app/components/generic/reaction modal/reactors";
 import { useAppDispatch } from "@/app/store/hooks";
-import { openReactionModalForThisComment } from "@/app/store/slices/post/group/origianl";
+import { openReactionModalForThisReplyReply } from "@/app/store/slices/post/user/origianl";
 
-export default function ReactionModalForThisComment() {
+export default function ReactionModalForThisReplyReply() {
   const dispatch = useAppDispatch();
   const onClose = () => {
     dispatch(
-      openReactionModalForThisComment({
+      openReactionModalForThisReplyReply({
         currentReactionType: "",
-        isOpen: false,
+        isOpen: true,
       })
     );
   };

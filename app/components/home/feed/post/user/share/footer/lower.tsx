@@ -4,7 +4,7 @@ import Share from "./lower/share";
 
 export default function Lower() {
   return (
-    <div className=" flex items-center justify-between px-2 pb-1.5 mt-2">
+    <div className="relative flex items-center justify-between px-2 pb-1.5 mt-2">
       <Like />
       <Comment />
       <Share />

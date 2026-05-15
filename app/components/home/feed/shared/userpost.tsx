@@ -1,6 +1,6 @@
 import SharePostContainer from "@/app/components/generic/shared post container/shared post container";
-import Header from "../post/group/original/header";
 import Content from "../post/user/original/content";
+import Header from "../post/user/original/header";
 
 export default function SharedUserPost() {
   return (

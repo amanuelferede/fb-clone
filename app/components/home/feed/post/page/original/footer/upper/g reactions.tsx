@@ -10,7 +10,7 @@ export default function GReactions() {
     dispatch(
       openReactionModalForThisPost({
         currentReactionType: currentReactionType,
-        isOpen: true,
+        isOpen: false,
       })
     );
   };

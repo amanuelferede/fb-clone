@@ -1,4 +1,4 @@
-import SharedUserPost from "../../../shared/userpost";
+import SharedPagePost from "../../../shared/pagepost";
 
 export default function Content() {
   return (
@@ -9,7 +9,7 @@ export default function Content() {
         natus ex numquam! Aut repellat fugiat libero labore unde sunt. Ab,
         nesciunt.
       </p>
-      <SharedUserPost />
+      <SharedPagePost />
     </>
   );
 }

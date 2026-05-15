@@ -25,7 +25,7 @@ export default function Like() {
     clearTimeout(timoutId.current!);
   };
   return (
-    <div className="relative">
+    <div className=" grow">
       {toShowReactionBox && (
         <ReactionEmojies
           hideReactionEmojies={hideReactionEmojies}

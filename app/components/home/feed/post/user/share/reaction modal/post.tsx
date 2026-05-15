@@ -5,16 +5,15 @@ import ReactionModalHeader from "@/app/components/generic/reaction modal/header"
 import ReactionModal from "@/app/components/generic/reaction modal/modal";
 import Reactors from "@/app/components/generic/reaction modal/reactors";
 import { useAppDispatch } from "@/app/store/hooks";
-import { openReactionModalForThisReplyReply } from "@/app/store/slices/post/group/share";
+import { isOpen } from "@/app/store/slices/modal state";
+import { openReactionModalForThisPost } from "@/app/store/slices/post/user/share";
 
-export default function ReactionModalForThisReplyReply() {
+export default function ReactionModalForThisPost() {
   const dispatch = useAppDispatch();
   const onClose = () => {
+    dispatch(isOpen(false));
     dispatch(
-      openReactionModalForThisReplyReply({
-        currentReactionType: "",
-        isOpen: true,
-      })
+      openReactionModalForThisPost({ currentReactionType: "", isOpen: false })
     );
   };
   return (
