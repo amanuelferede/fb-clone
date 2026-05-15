@@ -7,11 +7,11 @@ import UploadedMedias from "./uploadedmedias/uploadedmedias";
 import { useAppDispatch, useAppSelector } from "@/app/store/hooks";
 import { setPostConent } from "@/app/store/slices/addpost";
 import { ChangeEvent } from "react";
-import Header from "./header";
-import ModalContainer from "./modal container";
 import CurrentUser from "./current user";
-import BodyContainer from "./body container";
-export default function PostModal() {
+import PostModalHeader from "../../generic/post modal/header";
+import AddPostModal from "../../generic/post modal/modal";
+import AddPostModalBody from "../../generic/post modal/body";
+export default function CreatePostModal() {
   const dispatch = useAppDispatch();
 
   const uploadedMedias = useAppSelector((state) => state.addPost.uploadedFiles);
@@ -21,10 +21,10 @@ export default function PostModal() {
     dispatch(setPostConent(e.target.value));
   };
   return (
-    <ModalContainer>
-      <Header />
+    <AddPostModal>
+      <PostModalHeader />
       <CurrentUser />
-      <BodyContainer>
+      <AddPostModalBody>
         <TextBox
           onChangePostContent={onChangePostContent}
           postContent={postContent}
@@ -33,13 +33,13 @@ export default function PostModal() {
         {uploadedMedias.length > 0 && (
           <UploadedMedias uploadedMedias={uploadedMedias} />
         )}
-      </BodyContainer>
+      </AddPostModalBody>
 
       <ColorCard
         postContent={postContent}
         uploadedMediaLength={uploadedMedias.at.length}
       />
       <Footer />
-    </ModalContainer>
+    </AddPostModal>
   );
 }

@@ -3,7 +3,7 @@ import Header from "./header";
 import Content from "./content";
 import Footer from "./footer/footer";
 
-export default function OriginalUserPost() {
+export default function OriginalPagePost() {
   /**
    * const [isPending, formAction, ]
    */

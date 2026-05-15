@@ -1,4 +1,4 @@
-"use cilent";
+"use client";
 import { useAppDispatch } from "@/app/store/hooks";
 import { isOpen } from "@/app/store/slices/modal state";
 import { openReactionModalForThisPost } from "@/app/store/slices/post/group/share";

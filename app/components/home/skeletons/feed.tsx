@@ -1,4 +1,4 @@
-import PostCard from "../feed/postcard";
+import PostCard from "../../generic/post card/post card";
 
 export default function FeedSkeleton() {
   return (

@@ -1,7 +1,7 @@
 import { CgClose } from "react-icons/cg";
 import { openAddPostModal } from "@/app/store/slices/addpost";
 import { useAppDispatch } from "@/app/store/hooks";
-export default function Header() {
+export default function AddPostModalHeader() {
   const dispatch = useAppDispatch();
   const openModal = () => {
     dispatch(openAddPostModal(false));

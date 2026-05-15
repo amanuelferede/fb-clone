@@ -1,4 +1,4 @@
-export default function BodyContainer({
+export default function AddPostModalBody({
   children,
 }: {
   children: React.ReactNode;

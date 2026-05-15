@@ -1,4 +1,4 @@
-export default function ModalContainer({
+export default function AddPostModal({
   children,
 }: {
   children: React.ReactNode;
